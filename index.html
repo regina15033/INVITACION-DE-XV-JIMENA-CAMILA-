@@ -9,6 +9,7 @@
     <style>
         :root {
             --custom-blue: #1d6ba4;
+            --darker-blue: #16527d; /* Azul 10% más oscuro */
         }
 
         body, html {
@@ -112,6 +113,7 @@
             margin-bottom: 10px;
         }
 
+        /* Fecha 10% más grande y más oscura */
         .date-container {
             display: flex;
             align-items: center;
@@ -119,36 +121,38 @@
             gap: 12px;
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-size: 1.8rem;
-            font-weight: 400;
+            font-size: 2rem; 
+            font-weight: 600;
             margin-bottom: 15px;
+            color: var(--darker-blue);
         }
 
         .date-divider {
             width: 0;
-            height: 30px;
-            border-left: 2px dotted var(--custom-blue);
-            opacity: 0.6;
+            height: 35px;
+            border-left: 2px dotted var(--darker-blue);
+            opacity: 0.8;
         }
 
+        /* Frase 2% más grande y en varios renglones */
         .text-frase-especial {
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.75rem;
-            line-height: 1.6;
-            max-width: 80%;
+            font-size: 0.765rem; 
+            line-height: 1.8;
+            max-width: 85%;
             margin: 0 auto;
             font-style: italic;
-            font-weight: 400;
+            font-weight: 500;
             letter-spacing: 0.5px;
-            color: #1d6ba4;
+            color: var(--darker-blue);
         }
 
-        /* Estilos del Calendario Compacto - Subido un 10% */
+        /* Estilos del Calendario */
         .reserva-title {
             font-family: 'Parisienne', cursive;
             font-size: 1.8rem;
             margin-bottom: 8px;
-            margin-top: -5vh; /* Ajuste para subir el conjunto */
+            margin-top: -5vh; 
         }
 
         .calendar-wrapper {
@@ -157,7 +161,7 @@
             padding: 12px; 
             border-radius: 15px;
             width: 216px;
-            margin: 0 auto 25px; /* Espacio extra abajo para no chocar con cuenta regresiva */
+            margin: 0 auto 25px; 
             border: 1px solid rgba(29, 107, 164, 0.2);
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
@@ -201,10 +205,10 @@
             opacity: 0.8;
         }
 
-        /* Cuenta Regresiva - 20% más grande que la versión anterior */
+        /* Cuenta Regresiva */
         .faltan-text {
             font-family: 'Parisienne', cursive;
-            font-size: 2rem; /* Aumentado */
+            font-size: 2rem;
             margin-bottom: 15px;
             font-style: italic;
         }
@@ -212,7 +216,7 @@
         .countdown-container {
             display: flex;
             justify-content: center;
-            gap: 20px; /* Más espacio entre items */
+            gap: 20px;
         }
 
         .countdown-item {
@@ -223,13 +227,13 @@
 
         .countdown-number {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem; /* Aumentado sustancialmente */
+            font-size: 1.8rem;
             font-weight: 600;
             line-height: 1;
         }
 
         .countdown-label {
-            font-size: 0.75rem; /* Aumentado */
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             opacity: 0.8;
@@ -349,9 +353,13 @@
                     <span>26</span>
                 </div>
 
-                <p class="text-frase-especial">
-                    La cuenta regresiva ha comenzado. Será una noche llena de brillo y encanto, y me encantaría que formaran parte de esta celebración tan especial en mi vida.
-                </p>
+                <div class="text-frase-especial">
+                    La cuenta regresiva ha <br>
+                    comenzado. Sera una noche llena de <br>
+                    brillo y encanto, y me encantaría <br>
+                    que formaran parte de esta celebracion <br>
+                    especial en mi vida.
+                </div>
             </div>
 
             <img id="castle-img" 
@@ -431,7 +439,6 @@
         const castleImg = document.getElementById('castle-img');
         const countdownContent = document.getElementById('countdown-content');
 
-        // Lógica de apertura
         envelope.addEventListener('click', () => {
             envelope.classList.add('open');
             setTimeout(() => {
@@ -444,7 +451,6 @@
             }, 1000);
         });
 
-        // Animaciones al hacer scroll
         scrollContainer.addEventListener('scroll', () => {
             const h = scrollContainer.clientHeight;
             const scroll = scrollContainer.scrollTop;
@@ -459,7 +465,6 @@
             }
         });
 
-        // Cuenta regresiva para el 2 de mayo de 2026
         const targetDate = new Date("May 2, 2026 00:00:00").getTime();
 
         setInterval(() => {
