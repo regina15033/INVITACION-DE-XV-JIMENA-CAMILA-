@@ -77,10 +77,9 @@
             color: var(--custom-blue);
             text-align: center;
             justify-content: flex-start;
-            padding-top: 8vh;
+            padding-top: 5vh;
         }
 
-        /* Base para animaciones */
         .anim-fade {
             opacity: 0;
             transform: translateY(20px);
@@ -141,14 +140,13 @@
             font-size: 0.78rem; 
             line-height: 1.9;
             max-width: 90%;
-            margin: 0 auto;
+            margin: 5% auto 0;
             font-style: italic;
             font-weight: 500;
             letter-spacing: 0.5px;
             color: var(--darker-blue);
         }
 
-        /* Animación para el texto que aparece poco a poco */
         .stagger-text span {
             opacity: 0;
             display: inline-block;
@@ -164,7 +162,7 @@
         .reserva-title {
             font-family: 'Parisienne', cursive;
             font-size: 2.2rem;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .calendar-wrapper {
@@ -173,7 +171,7 @@
             padding: 12px; 
             border-radius: 15px;
             width: 216px;
-            margin: 0 auto 20px; 
+            margin: 0 auto 15px; 
             border: 1px solid rgba(29, 107, 164, 0.2);
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
@@ -217,18 +215,17 @@
             opacity: 0.8;
         }
 
-        /* Nueva imagen decorativa */
         .decoration-img {
-            width: 140px;
+            width: 130px;
             height: auto;
-            margin: 5px auto 15px;
+            margin: 5px auto 10px;
             filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.1));
         }
 
         .faltan-text {
             font-family: 'Parisienne', cursive;
             font-size: 2.2rem;
-            margin-bottom: 15px;
+            margin-bottom: 5px; 
             font-style: italic;
         }
 
@@ -236,6 +233,7 @@
             display: flex;
             justify-content: center;
             gap: 22px;
+            margin-top: 0; 
         }
 
         .countdown-item {
@@ -259,21 +257,24 @@
             margin-top: 4px;
         }
 
+        /* Ajustes de tamaño para el carruaje y el castillo */
         .castle-image {
             position: absolute;
-            bottom: 4vh;
-            width: 84%; 
-            max-width: 385px; 
+            bottom: -2vh; 
+            /* Reducido 20% adicional: de 39% a ~31% */
+            width: 31%; 
+            max-width: 210px;
             z-index: 1;
-            filter: drop-shadow(0px 0px 10px rgba(29, 107, 164, 0.3));
+            filter: drop-shadow(0px 0px 15px rgba(29, 107, 164, 0.4));
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 1.5s ease 2s, transform 1.5s ease 2s;
+            /* Se mantiene la escala majestuosa del castillo */
+            transform: translateY(40px) scale(1.8); 
+            transition: opacity 1.8s ease 1s, transform 1.5s ease 1s;
         }
 
         .castle-visible {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateY(0) scale(1.98); 
         }
 
         .envelope {
@@ -379,25 +380,26 @@
 
                 <div class="text-frase-especial stagger-text" id="animated-phrase">
                     <span>La cuenta regresiva ha</span> <br>
-                    <span>comenzado. Será una noche llena de</span> <br>
-                    <span>brillo y encanto, y me encantaría</span> <br>
-                    <span>que formaran parte de</span> <br>
-                    <span>esta celebración especial en mi vida.</span>
+                    <span>comenzado. Será una noche</span> <br>
+                    <span>llena de brillo y,</span> <br>
+                    <span>encanto y me encantaría</span> <br>
+                    <span>que formaran parte de esta</span> <br>
+                    <span>celebración especial</span> <br>
+                    <span>en mi vida.</span>
                 </div>
             </div>
 
+            <!-- Imagen del carruaje reducida un 20% adicional -->
             <img id="castle-img" 
                  class="castle-image" 
                  src="https://raw.githubusercontent.com/regina15033/xv-camila/main/1477b8bed4713558ef720f2969e31159-Photoroom.png" 
-                 alt="Carruaje Real">
+                 alt="[Carruaje Real y Castillo]">
         </div>
 
         <div id="view-countdown" class="page-view">
             <div id="countdown-content" class="anim-fade w-full flex flex-col items-center">
-                <!-- Reserva este día subido -->
                 <h5 class="reserva-title">Reserva este día</h5>
                 
-                <!-- Calendario -->
                 <div class="calendar-wrapper">
                     <div class="calendar-header">Mayo 2026</div>
                     <div class="calendar-grid">
@@ -429,10 +431,9 @@
                     </div>
                 </div>
 
-                <!-- Imagen decorativa solicitada -->
                 <img class="decoration-img" 
                      src="https://raw.githubusercontent.com/regina15033/xv-camila/main/df8e56933f3bf2fe6e5190fe68086a79-Photoroom.png" 
-                     alt="[Imagen de Corona Decorativa]">
+                     alt="[Corona Real]">
 
                 <p class="faltan-text">Faltan</p>
 
