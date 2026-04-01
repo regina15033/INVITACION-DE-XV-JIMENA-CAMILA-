@@ -9,7 +9,7 @@
     <style>
         :root {
             --custom-blue: #1d6ba4;
-            --darker-blue: #16527d; /* Azul 10% más oscuro */
+            --darker-blue: #16527d;
         }
 
         body, html {
@@ -67,7 +67,7 @@
         #view-details {
             background-image: url('https://raw.githubusercontent.com/regina15033/xv-camila/main/CAMILA%20(5).jpg');
             justify-content: flex-start;
-            padding-top: 15vh; 
+            padding-top: 12vh; 
             color: var(--custom-blue); 
             text-align: center;
         }
@@ -76,16 +76,18 @@
             background-image: url('https://raw.githubusercontent.com/regina15033/xv-camila/main/CAMILA%20(5).jpg');
             color: var(--custom-blue);
             text-align: center;
-            justify-content: center;
+            justify-content: flex-start;
+            padding-top: 8vh;
         }
 
-        .fade-in-content {
+        /* Base para animaciones */
+        .anim-fade {
             opacity: 0;
-            transform: translateY(30px);
-            transition: transform 1.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 2s ease;
+            transform: translateY(20px);
+            transition: opacity 1.2s ease, transform 1.2s ease;
         }
 
-        .show-content {
+        .anim-visible {
             opacity: 1;
             transform: translateY(0);
         }
@@ -113,7 +115,6 @@
             margin-bottom: 10px;
         }
 
-        /* Fecha 10% más grande y más oscura */
         .date-container {
             display: flex;
             align-items: center;
@@ -125,6 +126,7 @@
             font-weight: 600;
             margin-bottom: 15px;
             color: var(--darker-blue);
+            opacity: 0.9;
         }
 
         .date-divider {
@@ -134,12 +136,11 @@
             opacity: 0.8;
         }
 
-        /* Frase 2% más grande y en varios renglones */
         .text-frase-especial {
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.765rem; 
-            line-height: 1.8;
-            max-width: 85%;
+            font-size: 0.78rem; 
+            line-height: 1.9;
+            max-width: 90%;
             margin: 0 auto;
             font-style: italic;
             font-weight: 500;
@@ -147,12 +148,23 @@
             color: var(--darker-blue);
         }
 
-        /* Estilos del Calendario */
+        /* Animación para el texto que aparece poco a poco */
+        .stagger-text span {
+            opacity: 0;
+            display: inline-block;
+            transform: translateY(10px);
+            transition: all 0.6s ease;
+        }
+
+        .stagger-text.active span {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         .reserva-title {
             font-family: 'Parisienne', cursive;
-            font-size: 1.8rem;
-            margin-bottom: 8px;
-            margin-top: -5vh; 
+            font-size: 2.2rem;
+            margin-bottom: 15px;
         }
 
         .calendar-wrapper {
@@ -161,7 +173,7 @@
             padding: 12px; 
             border-radius: 15px;
             width: 216px;
-            margin: 0 auto 25px; 
+            margin: 0 auto 20px; 
             border: 1px solid rgba(29, 107, 164, 0.2);
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
@@ -205,10 +217,17 @@
             opacity: 0.8;
         }
 
-        /* Cuenta Regresiva */
+        /* Nueva imagen decorativa */
+        .decoration-img {
+            width: 140px;
+            height: auto;
+            margin: 5px auto 15px;
+            filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.1));
+        }
+
         .faltan-text {
             font-family: 'Parisienne', cursive;
-            font-size: 2rem;
+            font-size: 2.2rem;
             margin-bottom: 15px;
             font-style: italic;
         }
@@ -216,7 +235,7 @@
         .countdown-container {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 22px;
         }
 
         .countdown-item {
@@ -227,7 +246,7 @@
 
         .countdown-number {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 600;
             line-height: 1;
         }
@@ -247,7 +266,14 @@
             max-width: 385px; 
             z-index: 1;
             filter: drop-shadow(0px 0px 10px rgba(29, 107, 164, 0.3));
-            transition: opacity 2.5s ease, transform 1.5s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1.5s ease 2s, transform 1.5s ease 2s;
+        }
+
+        .castle-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .envelope {
@@ -317,7 +343,6 @@
         <source src="https://raw.githubusercontent.com/regina15033/xv-camila/main/Lana%20del%20Rey%20%E2%80%94%20Once%20Upon%20a%20Dream%20%20%5BSub%20(mp3cut.net).m4a" type="audio/mpeg">
     </audio>
 
-    <!-- PÁGINA 1: EL SOBRE -->
     <div id="view-envelope">
         <p id="hint" style="color: #1d6ba4; margin-bottom: 25px; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 2px; font-weight: bold; text-shadow: 0px 0px 10px rgba(255,255,255,0.8);">Da clic para abrir</p>
         <div class="envelope" id="envelope">
@@ -326,10 +351,8 @@
         </div>
     </div>
 
-    <!-- CONTENEDOR CON SCROLL -->
     <div id="scroll-container">
         
-        <!-- PÁGINA 2: NOMBRE -->
         <div id="view-invitation" class="page-view">
             <div class="absolute bottom-4 left-0 w-full text-center p-12 bg-white/40 backdrop-blur-sm" style="margin-bottom: 2%;">
                  <h2 class="font-['Great_Vibes'] text-6xl text-blue-900" style="line-height: 1.4;">Jimena Camila</h2>
@@ -338,14 +361,15 @@
             </div>
         </div>
 
-        <!-- PÁGINA 3: TE ESPERAMOS Y FRASE -->
         <div id="view-details" class="page-view">
-            <div id="details-content" class="fade-in-content relative z-10">
-                <p class="text-te-esperamos">Te esperamos</p>
-                <h3 class="text-celebrar">PARA CELEBRAR</h3>
-                <h4 class="text-juntos">Juntos</h4>
+            <div class="relative z-10">
+                <div id="group-1" class="anim-fade">
+                    <p class="text-te-esperamos">Te esperamos</p>
+                    <h3 class="text-celebrar">PARA CELEBRAR</h3>
+                    <h4 class="text-juntos">Juntos</h4>
+                </div>
                 
-                <div class="date-container">
+                <div id="group-2" class="date-container anim-fade">
                     <span>02</span>
                     <div class="date-divider"></div>
                     <span>05</span>
@@ -353,26 +377,27 @@
                     <span>26</span>
                 </div>
 
-                <div class="text-frase-especial">
-                    La cuenta regresiva ha <br>
-                    comenzado. Sera una noche llena de <br>
-                    brillo y encanto, y me encantaría <br>
-                    que formaran parte de esta celebracion <br>
-                    especial en mi vida.
+                <div class="text-frase-especial stagger-text" id="animated-phrase">
+                    <span>La cuenta regresiva ha</span> <br>
+                    <span>comenzado. Será una noche llena de</span> <br>
+                    <span>brillo y encanto, y me encantaría</span> <br>
+                    <span>que formaran parte de</span> <br>
+                    <span>esta celebración especial en mi vida.</span>
                 </div>
             </div>
 
             <img id="castle-img" 
-                 class="castle-image fade-in-content" 
+                 class="castle-image" 
                  src="https://raw.githubusercontent.com/regina15033/xv-camila/main/1477b8bed4713558ef720f2969e31159-Photoroom.png" 
                  alt="Carruaje Real">
         </div>
 
-        <!-- PÁGINA 4: CALENDARIO Y CUENTA REGRESIVA -->
         <div id="view-countdown" class="page-view">
-            <div id="countdown-content" class="fade-in-content">
+            <div id="countdown-content" class="anim-fade w-full flex flex-col items-center">
+                <!-- Reserva este día subido -->
                 <h5 class="reserva-title">Reserva este día</h5>
                 
+                <!-- Calendario -->
                 <div class="calendar-wrapper">
                     <div class="calendar-header">Mayo 2026</div>
                     <div class="calendar-grid">
@@ -403,6 +428,11 @@
                         <div class="calendar-day">31</div>
                     </div>
                 </div>
+
+                <!-- Imagen decorativa solicitada -->
+                <img class="decoration-img" 
+                     src="https://raw.githubusercontent.com/regina15033/xv-camila/main/df8e56933f3bf2fe6e5190fe68086a79-Photoroom.png" 
+                     alt="[Imagen de Corona Decorativa]">
 
                 <p class="faltan-text">Faltan</p>
 
@@ -435,9 +465,24 @@
         const scrollContainer = document.getElementById('scroll-container');
         const audio = document.getElementById('bg-music');
         
-        const detailsContent = document.getElementById('details-content');
+        const g1 = document.getElementById('group-1');
+        const g2 = document.getElementById('group-2');
         const castleImg = document.getElementById('castle-img');
         const countdownContent = document.getElementById('countdown-content');
+        const animatedPhrase = document.getElementById('animated-phrase');
+
+        function runSequence() {
+            setTimeout(() => g1.classList.add('anim-visible'), 100);
+            setTimeout(() => g2.classList.add('anim-visible'), 900);
+            setTimeout(() => {
+                const spans = animatedPhrase.querySelectorAll('span');
+                animatedPhrase.classList.add('active');
+                spans.forEach((span, index) => {
+                    span.style.transitionDelay = `${(index * 0.8)}s`;
+                });
+            }, 1700);
+            castleImg.classList.add('castle-visible');
+        }
 
         envelope.addEventListener('click', () => {
             envelope.classList.add('open');
@@ -455,13 +500,12 @@
             const h = scrollContainer.clientHeight;
             const scroll = scrollContainer.scrollTop;
             
-            if (scroll > h * 0.4) {
-                detailsContent.classList.add('show-content');
-                castleImg.classList.add('show-content');
+            if (scroll > h * 0.3) {
+                runSequence();
             }
             
-            if (scroll > h * 1.4) {
-                countdownContent.classList.add('show-content');
+            if (scroll > h * 1.3) {
+                countdownContent.classList.add('anim-visible');
             }
         });
 
