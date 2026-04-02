@@ -102,7 +102,6 @@
         .section-title { font-family: 'Parisienne', cursive; font-size: 2.8rem; color: var(--darker-blue); margin-bottom: 20px; }
         .text-juntos { font-family: 'Parisienne', cursive; font-size: 2.5rem; }
         
-        /* Tipografía cursiva para nombres de padres y padrinos - Reducido 5% de 1.8rem a 1.71rem */
         .names-display { 
             font-family: 'Great Vibes', cursive; 
             font-size: 1.71rem; 
@@ -301,10 +300,13 @@
             font-size: 0.7rem;
         }
 
-        /* Estilo para reducir la última página un 15% */
-        .thanks-page-reduced {
+        /* Estilo para ajustar la última página */
+        .thanks-page-container {
             transform: scale(0.85);
-            transform-origin: center center;
+            transform-origin: center top; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
     </style>
 </head>
@@ -410,7 +412,7 @@
             </div>
         </div>
 
-        <!-- 6. PÁGINA DE MISA (Contenido reducido un 10%) -->
+        <!-- 6. PÁGINA DE MISA -->
         <div class="page-view standard-bg">
             <div class="anim-fade w-full px-8 flex flex-col items-center" style="transform: scale(0.9);">
                 <h2 class="section-title" style="font-size: 2.3rem;">Ceremonia Religiosa</h2>
@@ -425,11 +427,11 @@
             </div>
         </div>
 
-        <!-- 7. PÁGINA DE RECEPCIÓN (Contenido aumentado) -->
+        <!-- 7. PÁGINA DE RECEPCIÓN -->
         <div class="page-view standard-bg" style="min-height: 90vh;">
             <div class="anim-fade w-full px-8 flex flex-col items-center">
                 <h2 class="section-title" style="font-size: 2.3rem;">Recepción</h2>
-                <div class="glass-card" style="transform: scale(1.05);"> <!-- Aumentado el tamaño del contenido -->
+                <div class="glass-card" style="transform: scale(1.05);"> 
                     <p class="font-bold text-[0.735rem] uppercase tracking-wider">La Cañada</p> 
                     <div class="h-px w-1/2 bg-blue-900/20 mx-auto my-2"></div>
                     <p class="text-[1.05rem] font-['Playfair_Display'] italic">4:30 PM</p> 
@@ -477,9 +479,9 @@
             </div>
         </div>
 
-        <!-- 9. DRESS CODE -->
-        <div class="page-view standard-bg overflow-hidden">
-            <div class="anim-fade px-4 w-full" style="margin-top: 10%;">
+        <!-- 9. DRESS CODE (Ajustado inicio de página y margen de texto) -->
+        <div class="page-view standard-bg overflow-hidden" style="justify-content: flex-start; padding-top: 50px;">
+            <div class="anim-fade px-4 w-full" style="margin-top: 15%;">
                 <h2 class="section-title">Dress Code</h2>
                 <p class="text-xs italic px-6 max-w-xs mx-auto text-blue-800 opacity-90 leading-relaxed font-semibold" style="margin-top: 5%;"> 
                     Te pedimos que evites el color azul en tu vestimenta, ya que este estará reservado para la quinceañera.
@@ -547,13 +549,13 @@
 
         <!-- 13. AGRADECIMIENTO -->
         <div class="page-view standard-bg">
-            <div class="anim-fade px-8 flex flex-col items-center thanks-page-reduced" style="margin-top: 22vh;">
+            <div class="anim-fade px-8 flex flex-col items-center thanks-page-container" style="margin-top: 5vh;">
                 <h2 class="section-title">¡Gracias!</h2>
                 <p class="text-[0.9rem] italic leading-[1.8] opacity-80 max-w-xs mx-auto">
                     "Gracias por ser parte de mi historia y por acompañarme en este sueño hecho realidad."
                 </p>
-                <h3 class="font-['Great_Vibes'] text-5xl text-blue-900 mt-16" style="line-height: 1.33;">Jimena Camila</h3>
-                <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/df8e56933f3bf2fe6e5190fe68086a79-Photoroom.png" alt="[Imagen de Decoración final]" class="thanks-img">
+                <h3 class="font-['Great_Vibes'] text-5xl text-blue-900 mt-12" style="line-height: 1.33;">Jimena Camila</h3>
+                <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/df8e56933f3bf2fe6e5190fe68086a79-Photoroom.png" alt="[Imagen de Decoración final]" class="thanks-img" style="margin-top: 15px;">
             </div>
         </div>
 
