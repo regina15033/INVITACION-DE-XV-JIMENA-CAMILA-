@@ -73,15 +73,16 @@
             text-align: center;
         }
 
+        /* Animaciones */
         .anim-fade {
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 1.2s ease, transform 1.2s ease;
+            transform: translateY(20px) scale(0.9);
+            transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .anim-visible {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateY(0) scale(1.1); /* Aumento del 10% */
         }
 
         .section-title { font-family: 'Parisienne', cursive; font-size: 2.8rem; color: var(--darker-blue); margin-bottom: 10px; }
@@ -96,7 +97,27 @@
             margin: 15px auto; border: 1px solid rgba(29, 107, 164, 0.2);
         }
         .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; font-size: 0.7rem; }
-        .heart-marker { position: absolute; color: var(--custom-blue); font-size: 1.6rem; z-index: 1; opacity: 0.8; top: -10px; }
+        
+        .heart-marker { 
+            position: absolute; 
+            z-index: 1; 
+            opacity: 0.8; 
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            width: 2.13rem;
+            height: 2.13rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .heart-marker svg {
+            fill: var(--custom-blue);
+            width: 100%;
+            height: 100%;
+        }
 
         /* Contador */
         .timer-circle {
@@ -112,54 +133,44 @@
             backdrop-filter: blur(5px);
         }
 
-        /* Itinerario */
-        .new-itinerary {
-            position: relative;
+        /* Itinerario Centrado */
+        .itinerary-list {
+            display: flex;
+            flex-direction: column;
+            gap: 40px; /* Aumentado para mejor visualización del escalado */
             width: 100%;
             max-width: 320px;
-            margin: 20px auto;
-        }
-        .itinerary-line {
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--custom-blue);
-            transform: translateX(-50%);
+            margin: 40px auto;
+            align-items: center; /* Centrado horizontal */
         }
         .itinerary-item {
             display: flex;
+            flex-direction: column; /* Cambio a columna para centrado total */
             align-items: center;
+            gap: 10px;
+            text-align: center;
             width: 100%;
-            margin-bottom: 40px;
-            position: relative;
         }
-        .itinerary-item-left, .itinerary-item-right { width: 45%; }
-        .itinerary-item-center {
-            width: 10%;
-            display: flex;
-            justify-content: center;
-            position: relative;
-            z-index: 10;
-        }
-        .itinerary-heart {
-            background: white;
-            color: var(--custom-blue);
-            border: 2px solid var(--custom-blue);
-            border-radius: 50%;
-            width: 24px;
-            height: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-        }
-        .itinerary-icon-img {
+        .itinerary-icon-container {
             width: 60px;
             height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .itinerary-icon-img {
+            width: 35px;
+            height: 35px;
             object-fit: contain;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+        .itinerary-svg {
+            width: 40px;
+            height: 40px;
+            fill: var(--custom-blue);
         }
 
         /* Botones */
@@ -239,14 +250,17 @@
         }
 
         .castle-image {
-            width: 75%; max-width: 350px;
+            width: 95%; 
+            max-width: 450px;
             filter: drop-shadow(0px 0px 10px rgba(29, 107, 164, 0.4));
             margin-top: 5%; 
         }
         
         .dress-code-img {
-            width: 215px;
+            width: 600px; 
+            max-width: 95%;
             margin: 20px auto 0;
+            display: block;
             filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.2));
         }
 
@@ -293,7 +307,7 @@
 
         <!-- 2. FECHA -->
         <div class="page-view standard-bg">
-            <div class="anim-fade px-8">
+            <div class="anim-fade px-8 flex flex-col items-center">
                 <p class="uppercase tracking-[3px] text-[0.7rem] mb-2">Te esperamos para celebrar</p>
                 <h4 class="text-juntos">Juntos</h4>
                 <div class="flex items-center justify-center gap-4 text-3xl font-['Playfair_Display'] my-6 text-blue-900 italic font-bold">
@@ -303,10 +317,10 @@
                     <div class="h-8 w-px bg-blue-900 opacity-30"></div>
                     <span>26</span>
                 </div>
-                <p class="text-[0.8rem] leading-relaxed italic opacity-80">
+                <p class="text-[0.8rem] leading-relaxed italic opacity-80 max-w-sm">
                     "La cuenta regresiva ha comenzado. Será una noche llena de brillo y encanto, y me encantaría que formaran parte de esta celebración especial en mi vida."
                 </p>
-                <img class="castle-image mx-auto" src="https://raw.githubusercontent.com/regina15033/xv-camila/main/1477b8bed4713558ef720f2969e31159-Photoroom.png" alt="[Carruaje]">
+                <img class="castle-image" src="https://raw.githubusercontent.com/regina15033/xv-camila/main/1477b8bed4713558ef720f2969e31159-Photoroom.png" alt="[Carruaje de cristal]">
             </div>
         </div>
 
@@ -317,7 +331,7 @@
                 <div class="mx-auto mb-4">
                     <p class="names-display">Adriana Ruiz Cabrera <br> <span class="text-xs opacity-50">&</span> <br> Miguel Angel Olvera</p>
                 </div>
-                <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/297cda702ffcaae7b211cd8a189365c9-Photoroom.png" alt="[Separador]" class="separator-img">
+                <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/297cda702ffcaae7b211cd8a189365c9-Photoroom.png" alt="[Divisor decorativo]" class="separator-img">
                 <h2 class="section-title mt-4">Mis Padrinos</h2>
                 <div class="mx-auto">
                     <p class="names-display">Lorena Ruiz Cabrera <br> <span class="text-xs opacity-50">&</span> <br> Jorge Beltrán Villegas</p>
@@ -334,7 +348,14 @@
                     <div class="calendar-grid">
                         <div class="opacity-50">D</div><div class="opacity-50">L</div><div class="opacity-50">M</div><div class="opacity-50">M</div><div class="opacity-50">J</div><div class="opacity-50">V</div><div class="opacity-50">S</div>
                         <div></div><div></div><div></div><div></div><div></div><div>1</div>
-                        <div class="relative"><span class="heart-marker">♥</span><span class="relative z-10 text-white">2</span></div>
+                        <div class="relative flex items-center justify-center">
+                            <span class="heart-marker">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                </svg>
+                            </span>
+                            <span class="relative z-10 text-white font-bold">2</span>
+                        </div>
                         <div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>
                         <div>10</div><div>11</div><div>12</div><div>13</div><div>14</div><div>15</div><div>16</div>
                     </div>
@@ -354,59 +375,99 @@
             <div class="anim-fade w-full px-8">
                 <h2 class="section-title">Misa</h2>
                 <div class="glass-card mx-auto">
-                    <p class="font-bold text-sm uppercase">Parroquia de Sumo y Eterno Sacerdote</p>
+                    <p class="font-bold text-sm uppercase">Parroquia de Jesucristo Sumo y Eterno Sacerdote</p>
                     <p class="text-xs my-2">3:00 PM</p>
-                    <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/c813f26822b2b3c59dc5ef601c7101e3-Photoroom.png" alt="[Decoración Misa]" class="location-img">
-                    <a href="https://maps.app.goo.gl/tWp7FvA3vD9F6qUv6" target="_blank" class="btn-action">Ver Ubicación</a>
+                    <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/c813f26822b2b3c59dc5ef601c7101e3-Photoroom.png" alt="[Icono de iglesia]" class="location-img">
+                    <a href="https://maps.app.goo.gl/B2kp9Qri1K5H3Lfb8" target="_blank" class="btn-action">Ver Ubicación</a>
                 </div>
                 <h2 class="section-title mt-6">Recepción</h2>
                 <div class="glass-card mx-auto">
                     <p class="font-bold text-sm uppercase">Salón La Rinconada</p>
                     <p class="text-xs my-2">4:30 PM</p>
-                    <!-- Nueva imagen de recepción solicitada -->
-                    <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/f6ee851f6b1fc3383be6cbdc8122a0f1-Photoroom.png" alt="[Decoración Recepción]" class="location-img">
-                    <a href="https://maps.app.goo.gl/hGf2yB5fN8M8E8v97" target="_blank" class="btn-action">Ver Ubicación</a>
+                    <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/f6ee851f6b1fc3383be6cbdc8122a0f1-Photoroom.png" alt="[Icono de recepción]" class="location-img">
+                    <a href="https://maps.app.goo.gl/bATheHfGzLrv78NP7" target="_blank" class="btn-action">Ver Ubicación</a>
                 </div>
             </div>
         </div>
 
         <!-- 6. ITINERARIO -->
         <div class="page-view standard-bg">
-            <div class="anim-fade w-full">
-                <h2 class="section-title">Itinerario</h2>
-                <div class="new-itinerary">
-                    <div class="itinerary-line"></div>
-                    <div class="itinerary-item">
-                        <div class="itinerary-item-left text-right pr-4"><p class="font-bold text-sm">MISA</p><p class="text-xs opacity-70">3:00 PM</p></div>
-                        <div class="itinerary-item-center"><div class="itinerary-heart">♥</div></div>
-                        <div class="itinerary-item-right pl-4"><img src="https://img.icons8.com/ios/100/1d6ba4/church.png" class="itinerary-icon-img"></div>
+            <div class="w-full px-4 flex flex-col items-center">
+                <h2 class="section-title anim-fade">Itinerario</h2>
+                <div class="itinerary-list">
+                    
+                    <div class="itinerary-item anim-fade">
+                        <div class="itinerary-icon-container">
+                            <img src="https://img.icons8.com/ios-filled/100/1d6ba4/church.png" class="itinerary-icon-img" alt="[Misa]">
+                        </div>
+                        <div>
+                            <p class="font-bold text-[0.8rem] tracking-widest">MISA</p>
+                            <p class="text-[0.7rem] opacity-70 italic">3:00 PM</p>
+                        </div>
                     </div>
-                    <div class="itinerary-item">
-                        <div class="itinerary-item-left text-right pr-4"><img src="https://img.icons8.com/ios/100/1d6ba4/champagne-bottle.png" class="itinerary-icon-img"></div>
-                        <div class="itinerary-item-center"><div class="itinerary-heart">♥</div></div>
-                        <div class="itinerary-item-right pl-4"><p class="font-bold text-sm">RECEPCIÓN</p><p class="text-xs opacity-70">4:30 PM</p></div>
+
+                    <div class="itinerary-item anim-fade">
+                        <div class="itinerary-icon-container">
+                            <img src="https://img.icons8.com/ios-filled/100/1d6ba4/champagne-bottle.png" class="itinerary-icon-img" alt="[Recepción]">
+                        </div>
+                        <div>
+                            <p class="font-bold text-[0.8rem] tracking-widest">RECEPCIÓN</p>
+                            <p class="text-[0.7rem] opacity-70 italic">4:30 PM</p>
+                        </div>
                     </div>
-                    <div class="itinerary-item">
-                        <div class="itinerary-item-left text-right pr-4"><p class="font-bold text-sm">CENA</p><p class="text-xs opacity-70">9:00 PM</p></div>
-                        <div class="itinerary-item-center"><div class="itinerary-heart">♥</div></div>
-                        <div class="itinerary-item-right pl-4"><img src="https://img.icons8.com/ios/100/1d6ba4/dining-room.png" class="itinerary-icon-img"></div>
+
+                    <div class="itinerary-item anim-fade">
+                        <div class="itinerary-icon-container">
+                            <img src="https://img.icons8.com/ios-filled/100/1d6ba4/dining-room.png" class="itinerary-icon-img" alt="[Comida]">
+                        </div>
+                        <div>
+                            <p class="font-bold text-[0.8rem] tracking-widest">COMIDA</p>
+                            <p class="text-[0.7rem] opacity-70 italic">5:00 PM</p>
+                        </div>
                     </div>
-                    <div class="itinerary-item">
-                        <div class="itinerary-item-left text-right pr-4"><img src="https://img.icons8.com/ios/100/1d6ba4/stars.png" class="itinerary-icon-img"></div>
-                        <div class="itinerary-item-center"><div class="itinerary-heart">♥</div></div>
-                        <div class="itinerary-item-right pl-4"><p class="font-bold text-sm">FIN DEL EVENTO</p><p class="text-xs opacity-70">2:00 AM</p></div>
+
+                    <div class="itinerary-item anim-fade">
+                        <div class="itinerary-icon-container">
+                            <svg class="itinerary-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 6l.5 1.5L6 8l-1.5.5L4 10l-.5-1.5L2 8l1.5-.5z" fill="currentColor" opacity="0.6"/>
+                                <path d="M20 5l.3 1.2.9.3-.9.3-.3 1.2-.3-1.2-.9-.3.9-.3z" fill="currentColor" opacity="0.6"/>
+                                <path d="M18 19l.5 1.5L20 21l-1.5.5L18 23l-.5-1.5L16 21l1.5-.5z" fill="currentColor" opacity="0.6"/>
+                                <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+                                <g stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                                    <line x1="12" y1="12" x2="12" y2="4"/>
+                                    <line x1="12" y1="12" x2="12" y2="20"/>
+                                    <line x1="12" y1="12" x2="4" y2="12"/>
+                                    <line x1="12" y1="12" x2="20" y2="12"/>
+                                    <line x1="12" y1="12" x2="6.34" y2="6.34"/>
+                                    <line x1="12" y1="12" x2="17.66" y2="17.66"/>
+                                    <line x1="12" y1="12" x2="6.34" y2="17.66"/>
+                                    <line x1="12" y1="12" x2="17.66" y2="6.34"/>
+                                </g>
+                                <g stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.5">
+                                    <line x1="12" y1="7" x2="12" y2="8"/>
+                                    <line x1="12" y1="16" x2="12" y2="17"/>
+                                    <line x1="7" y1="12" x2="8" y2="12"/>
+                                    <line x1="16" y1="12" x2="17" y2="12"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="font-bold text-[0.8rem] tracking-widest">FIN DEL EVENTO</p>
+                            <p class="text-[0.7rem] opacity-70 italic">12:00 AM</p>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>
 
         <!-- 7. DRESS CODE -->
         <div class="page-view standard-bg">
-            <div class="anim-fade px-8">
+            <div class="anim-fade px-4 w-full">
                 <h2 class="section-title">Dress Code</h2>
                 <p class="font-bold text-lg tracking-[5px] mb-2 text-blue-900">FORMAL</p>
                 <p class="text-xs italic px-4 max-w-xs mx-auto text-blue-800 opacity-80">Te pedimos amablemente evitar el uso de vestimenta en color azul, ya que es el color de la quinceañera.</p>
-                <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/f33e7a87dc7599a448a388b42b39c826-Photoroom.png" alt="Dress Code" class="dress-code-img">
+                <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/f33e7a87dc7599a448a388b42b39c826-Photoroom.png" alt="[Guía de vestimenta]" class="dress-code-img">
             </div>
         </div>
 
@@ -415,7 +476,6 @@
             <div class="anim-fade w-full px-6 flex flex-col items-center">
                 <h2 class="section-title">Confirmación</h2>
                 <p class="font-['Parisienne'] text-xl text-blue-900 mb-2 px-4 leading-tight">Tu presencia es el mejor regalo que me podrías dar</p>
-                <p class="text-[0.7rem] px-8 mb-6 italic opacity-80 leading-relaxed">Es por ello que te pido me confirmes si asistirás lo antes posible para así tener reservado tu lugar.</p>
                 <div class="glass-card w-full">
                     <input type="text" id="guest-name" class="confirm-input" placeholder="Nombre completo">
                     <input type="number" id="guest-count" class="confirm-input" placeholder="Número de personas">
@@ -429,7 +489,7 @@
         <div class="page-view standard-bg">
             <div class="anim-fade px-8">
                 <h2 class="section-title">Sugerencia de Regalos</h2>
-                <p class="text-xs italic max-w-xs mx-auto text-blue-800 opacity-90 mb-6">"Tu presencia es mi mayor alegría. Si deseas tener un detalle conmigo, puedes elegir el obsequio que desees o apoyarme mediante una lluvia de sobres el día del evento."</p>
+                <p class="text-xs italic max-w-xs mx-auto text-blue-800 opacity-90 mb-6">"Tu presencia es mi mayor alegría. Si deseas tener un detalle conmigo, puedes elegir el obsequio que desees o apoyarme mediante una lluvia de sobres."</p>
                 <div class="flex justify-center gap-8 items-center mt-4">
                     <div class="flex flex-col items-center"><svg class="gift-icon-svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><span class="text-[10px] mt-1 font-bold">SOBRES</span></div>
                     <div class="flex flex-col items-center"><svg class="gift-icon-svg" viewBox="0 0 24 24"><path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.65-.5-.65C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zM4 19V8h16v11H4z"/></svg><span class="text-[10px] mt-1 font-bold">REGALO</span></div>
@@ -445,7 +505,6 @@
                     <p class="text-xs mb-6">¡Ayúdame a guardar cada momento! Sube tus fotos y videos aquí para que pueda verlos después.</p>
                     <a href="#" target="_blank" class="btn-action btn-camera">📤 Subir Fotos</a>
                 </div>
-                <p class="text-sm font-bold mt-4 tracking-[4px] text-blue-900">#XVJimenaCamila</p>
             </div>
         </div>
 
@@ -453,9 +512,9 @@
         <div class="page-view standard-bg">
             <div class="anim-fade px-8 flex flex-col items-center">
                 <h2 class="section-title">¡Gracias!</h2>
-                <p class="text-[0.9rem] italic leading-relaxed opacity-80">"Gracias por ser parte de mi historia y por acompañarme en este sueño hecho realidad. Los espero con mucha emoción."</p>
+                <p class="text-[0.9rem] italic leading-relaxed opacity-80">"Gracias por ser parte de mi historia y por acompañarme en este sueño hecho realidad."</p>
                 <h3 class="font-['Great_Vibes'] text-5xl text-blue-900 mt-6">Jimena Camila</h3>
-                <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/df8e56933f3bf2fe6e5190fe68086a79-Photoroom.png" alt="Decoración Final" class="thanks-img">
+                <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/df8e56933f3bf2fe6e5190fe68086a79-Photoroom.png" alt="[Decoración final]" class="thanks-img">
             </div>
         </div>
 
@@ -479,17 +538,30 @@
             }, 1000);
         });
 
+        // Observador de intersección mejorado para el efecto de escala y aparición
+        const observerOptions = {
+            threshold: 0.5, // Se activa cuando el 50% del elemento es visible
+            root: scrollContainer
+        };
+
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('anim-visible'); });
-        }, { threshold: 0.1 });
+            entries.forEach(entry => { 
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('anim-visible'); 
+                } else {
+                    // Opcional: quitar la clase para que se repita la animación al subir
+                    // entry.target.classList.remove('anim-visible');
+                }
+            });
+        }, observerOptions);
 
         document.querySelectorAll('.anim-fade').forEach(el => observer.observe(el));
 
         function sendConfirmation() {
             const name = document.getElementById('guest-name').value;
             const count = document.getElementById('guest-count').value;
-            const phone = "524426084804";
-            if (!name || !count) return alert("Por favor llena todos los campos.");
+            const phone = "524427848694";
+            if (!name || !count) return; 
             const msg = `¡Hola! Soy ${name}, confirmo mi asistencia (${count} personas) para los XV años de Jimena Camila. ✨`;
             window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(msg)}`, '_blank');
         }
