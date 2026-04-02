@@ -146,36 +146,38 @@
             backdrop-filter: blur(5px);
         }
 
-        /* Itinerario */
+        /* Itinerario - Aumento de 10% */
         .itinerary-list {
             display: flex;
             flex-direction: column;
-            gap: 15px; 
+            gap: 18px; 
             width: 100%;
-            max-width: 280px;
+            max-width: 310px;
             margin: 10px auto;
             align-items: center;
-            transform: scale(0.9);
+            transform: scale(1.0); /* Ajustado de 0.9 a 1.0 aprox 10% */
         }
         .itinerary-item {
             display: flex;
             flex-direction: column; 
             align-items: center;
-            gap: 4px;
+            gap: 6px;
             text-align: center;
             width: 100%;
         }
         .itinerary-icon-container {
-            width: 42px;
-            height: 42px;
+            width: 48px; /* Aumentado 10% */
+            height: 48px;
             display: flex;
             align-items: center;
             justify-content: center;
             background: rgba(255, 255, 255, 0.3);
             border-radius: 50%;
         }
-        .itinerary-icon-img { width: 22px; height: 22px; object-fit: contain; }
-        .itinerary-svg { width: 26px; height: 26px; fill: var(--custom-blue); }
+        .itinerary-icon-img { width: 25px; height: 25px; object-fit: contain; } /* Aumentado */
+        .itinerary-svg { width: 30px; height: 30px; fill: var(--custom-blue); } /* Aumentado */
+        .itinerary-text-title { font-size: 0.77rem; } /* Aumentado */
+        .itinerary-text-time { font-size: 0.66rem; } /* Aumentado */
 
         /* Botones */
         .btn-action {
@@ -196,7 +198,6 @@
             margin-top: 10px;
             box-shadow: 0 4px 15px rgba(29, 107, 164, 0.3);
         }
-        /* Botones azules para fotos */
         .btn-photo-blue { 
             background: var(--custom-blue); 
             border: 1px solid rgba(255,255,255,0.2);
@@ -260,13 +261,13 @@
 
         .castle-image { width: 85%; max-width: 380px; filter: drop-shadow(0px 0px 10px rgba(29, 107, 164, 0.4)); margin-top: 15px; }
         
-        /* Dress Code */
+        /* Dress Code - Mover 1% a la izquierda (9%) */
         .dress-code-img { 
             width: 720px; 
             max-width: 114%; 
             margin-top: 20px; 
             filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.2)); 
-            transform: translateX(10%); 
+            transform: translateX(9%); 
         }
         
         .location-img { width: 120px; margin: 12px auto; }
@@ -292,7 +293,6 @@
             filter: drop-shadow(0px 4px 8px rgba(29, 107, 164, 0.2));
         }
 
-        /* Nueva imagen decorativa */
         .decorative-img { width: 140px; margin-top: 15px; filter: drop-shadow(0px 4px 8px rgba(29, 107, 164, 0.2)); }
     </style>
 </head>
@@ -413,8 +413,8 @@
             </div>
         </div>
 
-        <!-- 7. PÁGINA DE RECEPCIÓN -->
-        <div class="page-view standard-bg">
+        <!-- 7. PÁGINA DE RECEPCIÓN - Tamaño de página reducido un 10% (90vh) -->
+        <div class="page-view standard-bg" style="min-height: 90vh;">
             <div class="anim-fade w-full px-8 flex flex-col items-center">
                 <h2 class="section-title" style="font-size: 2.3rem;">Recepción</h2>
                 <div class="glass-card" style="transform: scale(0.85);"> 
@@ -428,7 +428,7 @@
             </div>
         </div>
 
-        <!-- 8. ITINERARIO -->
+        <!-- 8. ITINERARIO - Iconos y texto aumentados 10% -->
         <div class="page-view standard-bg" style="min-height: 90vh;">
             <div class="w-full px-4 flex flex-col items-center">
                 <h2 class="section-title anim-fade" style="font-size: 2.3rem; margin-bottom: 10px;">Itinerario</h2>
@@ -437,46 +437,46 @@
                         <div class="itinerary-icon-container">
                             <img src="https://img.icons8.com/ios-filled/100/1d6ba4/church.png" class="itinerary-icon-img" alt="[Imagen de Icono de iglesia]">
                         </div>
-                        <p class="font-bold text-[0.7rem] tracking-widest uppercase">Misa</p>
-                        <p class="text-[0.6rem] opacity-70 italic">3:00 PM</p>
+                        <p class="font-bold itinerary-text-title tracking-widest uppercase">Misa</p>
+                        <p class="itinerary-text-time opacity-70 italic">3:00 PM</p>
                     </div>
                     <div class="itinerary-item anim-fade">
                         <div class="itinerary-icon-container">
                             <img src="https://img.icons8.com/ios-filled/100/1d6ba4/champagne-bottle.png" class="itinerary-icon-img" alt="[Imagen de Icono de brindis]">
                         </div>
-                        <p class="font-bold text-[0.7rem] tracking-widest uppercase">Recepción</p>
-                        <p class="text-[0.6rem] opacity-70 italic">4:30 PM</p>
+                        <p class="font-bold itinerary-text-title tracking-widest uppercase">Recepción</p>
+                        <p class="itinerary-text-time opacity-70 italic">4:30 PM</p>
                     </div>
                     <div class="itinerary-item anim-fade">
                         <div class="itinerary-icon-container">
                             <img src="https://img.icons8.com/ios-filled/100/1d6ba4/dining-room.png" class="itinerary-icon-img" alt="[Imagen de Icono de comida]">
                         </div>
-                        <p class="font-bold text-[0.7rem] tracking-widest uppercase">Comida</p>
-                        <p class="text-[0.6rem] opacity-70 italic">5:00 PM</p>
+                        <p class="font-bold itinerary-text-title tracking-widest uppercase">Comida</p>
+                        <p class="itinerary-text-time opacity-70 italic">5:00 PM</p>
                     </div>
                     <div class="itinerary-item anim-fade">
                         <div class="itinerary-icon-container">
                             <svg class="itinerary-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="1.5" fill="currentColor"/><g stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="12" y1="4" x2="12" y2="20"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="6.34" y1="6.34" x2="17.66" y2="17.66"/><line x1="6.34" y1="17.66" x2="17.66" y2="6.34"/></g></svg>
                         </div>
-                        <p class="font-bold text-[0.7rem] tracking-widest uppercase">Fin del Evento</p>
-                        <p class="text-[0.6rem] opacity-70 italic">12:00 AM</p>
+                        <p class="font-bold itinerary-text-title tracking-widest uppercase">Fin del Evento</p>
+                        <p class="itinerary-text-time opacity-70 italic">12:00 AM</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- 9. DRESS CODE -->
+        <!-- 9. DRESS CODE - Imagen movida y texto bajado -->
         <div class="page-view standard-bg overflow-hidden">
-            <div class="anim-fade px-4 w-full">
+            <div class="anim-fade px-4 w-full" style="margin-top: 10%;"> <!-- Bajado 10% aprox -->
                 <h2 class="section-title">Dress Code</h2>
-                <p class="text-xs italic px-6 max-w-xs mx-auto text-blue-800 opacity-90 leading-relaxed font-semibold" style="margin-top: 15%;"> 
+                <p class="text-xs italic px-6 max-w-xs mx-auto text-blue-800 opacity-90 leading-relaxed font-semibold" style="margin-top: 5%;"> 
                     Te pedimos que evites el color azul en tu vestimenta, ya que este estará reservado para la quinceañera.
                 </p>
                 <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/f33e7a87dc7599a448a388b42b39c826-Photoroom.png" alt="[Imagen de Guía de vestimenta]" class="dress-code-img">
             </div>
         </div>
 
-        <!-- 10. CONFIRMACIÓN - Movida 2% a la derecha -->
+        <!-- 10. CONFIRMACIÓN -->
         <div class="page-view standard-bg">
             <div class="anim-fade w-full px-6 flex flex-col items-center" style="margin-left: 2%;">
                 <h2 class="section-title">Confirmación</h2>
@@ -492,7 +492,7 @@
             </div>
         </div>
 
-        <!-- 11. REGALOS - Subido un 5% y con nueva imagen -->
+        <!-- 11. REGALOS -->
         <div class="page-view standard-bg" style="min-height: 60vh; padding-bottom: 20px; margin-top: -5vh;">
             <div class="anim-fade px-8 flex flex-col items-center">
                 <h2 class="section-title" style="font-size: 2.2rem; margin-bottom: 10px;">Regalos</h2>
@@ -511,15 +511,14 @@
                         <span class="text-[9px] font-bold tracking-widest">DETALLE</span>
                     </div>
                 </div>
-                <!-- Imagen decorativa agregada -->
                 <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/a1c7ed507b28e2e3678f9ae8fdccf21c-Photoroom%20(1).png" alt="[Imagen de Decoración de regalos]" class="decorative-img">
             </div>
         </div>
 
-        <!-- 12. FOTOS -->
+        <!-- 12. FOTOS - Texto cambiado -->
         <div class="page-view standard-bg">
             <div class="anim-fade px-10 flex flex-col items-center" style="transform: translateY(-10%);">
-                <h2 class="section-title" style="font-size: 2.3rem;">Fotos</h2>
+                <h2 class="section-title" style="font-size: 2.3rem;">Captura el momento</h2>
                 <div class="glass-card mx-auto flex flex-col items-center" style="padding: 15px;">
                     <p class="text-[10px] mb-3 leading-snug">¡Ayúdame a guardar cada momento! Escanea el QR o usa los botones para compartir o ver las fotos.</p>
                     <div class="qr-container" style="width: 130px; height: 130px;">
@@ -534,9 +533,9 @@
             </div>
         </div>
 
-        <!-- 13. AGRADECIMIENTO -->
+        <!-- 13. AGRADECIMIENTO - Texto bajado 12% -->
         <div class="page-view standard-bg">
-            <div class="anim-fade px-8 flex flex-col items-center" style="margin-top: 10vh;">
+            <div class="anim-fade px-8 flex flex-col items-center" style="margin-top: 22vh;"> <!-- Ajustado de 10vh a 22vh (aprox 12% extra) -->
                 <h2 class="section-title">¡Gracias!</h2>
                 <p class="text-[0.9rem] italic leading-[1.8] opacity-80 max-w-xs mx-auto">
                     "Gracias por ser parte de mi historia y por acompañarme en este sueño hecho realidad."
