@@ -42,7 +42,7 @@
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            padding: 60px 20px;
+            padding: 40px 20px;
         }
 
         #view-envelope {
@@ -73,7 +73,6 @@
             text-align: center;
         }
 
-        /* Animaciones */
         .anim-fade {
             opacity: 0;
             transform: translateY(20px) scale(0.95);
@@ -119,7 +118,6 @@
             height: 100%;
         }
 
-        /* Contador - Reducido un 10% adicional */
         .timer-circle {
             width: 54px;
             height: 54px;
@@ -133,35 +131,36 @@
             backdrop-filter: blur(5px);
         }
 
-        /* Itinerario - Reducido un 5% */
+        /* Itinerario - Reducido un 10% adicional */
         .itinerary-list {
             display: flex;
             flex-direction: column;
-            gap: 22px; 
+            gap: 15px; 
             width: 100%;
-            max-width: 300px;
-            margin: 15px auto;
-            align-items: center; 
+            max-width: 280px;
+            margin: 10px auto;
+            align-items: center;
+            transform: scale(0.9);
         }
         .itinerary-item {
             display: flex;
             flex-direction: column; 
             align-items: center;
-            gap: 6px;
+            gap: 4px;
             text-align: center;
             width: 100%;
         }
         .itinerary-icon-container {
-            width: 48px;
-            height: 48px;
+            width: 42px;
+            height: 42px;
             display: flex;
             align-items: center;
             justify-content: center;
             background: rgba(255, 255, 255, 0.3);
             border-radius: 50%;
         }
-        .itinerary-icon-img { width: 26px; height: 26px; object-fit: contain; }
-        .itinerary-svg { width: 30px; height: 30px; fill: var(--custom-blue); }
+        .itinerary-icon-img { width: 22px; height: 22px; object-fit: contain; }
+        .itinerary-svg { width: 26px; height: 26px; fill: var(--custom-blue); }
 
         /* Botones */
         .btn-action {
@@ -183,7 +182,6 @@
         }
         .btn-camera { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
 
-        /* Tarjetas Misa/Recepción - Reducidas un 10% */
         .glass-card {
             background: rgba(255, 255, 255, 0.5);
             backdrop-filter: blur(10px);
@@ -240,23 +238,22 @@
         }
 
         .castle-image { width: 85%; max-width: 380px; filter: drop-shadow(0px 0px 10px rgba(29, 107, 164, 0.4)); margin-top: 15px; }
+        
+        /* Dress Code - Movido un 10% a la izquierda */
         .dress-code-img { 
             width: 720px; 
             max-width: 114%; 
             margin-top: 20px; 
             filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.2)); 
-            transform: translateX(20%); 
+            transform: translateX(10%); 
         }
         
         .location-img { width: 120px; margin: 12px auto; }
         .separator-img { width: 110px; margin: 15px auto; opacity: 0.8; }
         .gift-icon-svg { width: 35px; height: 35px; fill: var(--custom-blue); }
         .thanks-img { width: 250px; margin-top: 25px; filter: drop-shadow(0px 4px 15px rgba(29, 107, 164, 0.3)); }
-        
-        /* Imagen específica para padrinos */
         .godparents-img { width: 180px; margin: 15px auto; filter: drop-shadow(0px 4px 10px rgba(29, 107, 164, 0.2)); }
 
-        /* Estilos específicos para el QR */
         .qr-container {
             width: 170px;
             height: 170px;
@@ -268,7 +265,6 @@
         }
         .qr-img { width: 100%; height: 100%; object-fit: contain; }
 
-        /* Nueva imagen debajo de cuenta regresiva */
         .countdown-bottom-img {
             width: 160px;
             margin: 10px auto;
@@ -346,7 +342,6 @@
 
         <!-- 5. CALENDARIO + COUNTDOWN -->
         <div class="page-view standard-bg">
-            <!-- Subido un 15% mediante transformación negativa -->
             <div class="anim-fade flex flex-col items-center" style="transform: translateY(-15%);">
                 <h2 class="section-title" style="font-size: 2.2rem; line-height: 1.1;">
                     Reserva <br> <span style="font-size: 2.6rem;">la Fecha</span>
@@ -368,17 +363,13 @@
                         <div>10</div><div>11</div><div>12</div><div>13</div><div>14</div><div>15</div><div>16</div>
                     </div>
                 </div>
-                <!-- Círculos reducidos por CSS -->
                 <div class="flex gap-2 my-4">
                     <div class="timer-circle"><span id="days" class="text-lg font-bold">00</span><span class="text-[6px] uppercase">Días</span></div>
                     <div class="timer-circle"><span id="hours" class="text-lg font-bold">00</span><span class="text-[6px] uppercase">Hrs</span></div>
                     <div class="timer-circle"><span id="minutes" class="text-lg font-bold">00</span><span class="text-[6px] uppercase">Min</span></div>
                     <div class="timer-circle"><span id="seconds" class="text-lg font-bold">00</span><span class="text-[6px] uppercase">Seg</span></div>
                 </div>
-                
-                <!-- Imagen añadida debajo de la cuenta regresiva -->
                 <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/852d2b55ae504af05080eaa25d0f2a74-Photoroom.png" alt="[Decoración mágica]" class="countdown-bottom-img">
-                
                 <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Mis+15+Años+-+Jimena+Camila&dates=20260502T210000Z/20260503T050000Z&location=Salón+La+Rinconada" target="_blank" class="btn-action">📅 Agendar Fecha</a>
             </div>
         </div>
@@ -386,13 +377,13 @@
         <!-- 6. PÁGINA DE MISA (Reducida) -->
         <div class="page-view standard-bg">
             <div class="anim-fade w-full px-8 flex flex-col items-center">
-                <h2 class="section-title" style="font-size: 2.5rem;">Ceremonia Religiosa</h2>
-                <div class="glass-card">
-                    <p class="font-bold text-[0.75rem] uppercase tracking-wider">Parroquia de Jesucristo Sumo y Eterno Sacerdote</p>
-                    <div class="h-px w-1/2 bg-blue-900/20 mx-auto my-3"></div>
+                <h2 class="section-title" style="font-size: 2.3rem;">Ceremonia Religiosa</h2>
+                <div class="glass-card" style="transform: scale(0.95);">
+                    <p class="font-bold text-[0.7rem] uppercase tracking-wider">Parroquia de Jesucristo Sumo y Eterno Sacerdote</p>
+                    <div class="h-px w-1/2 bg-blue-900/20 mx-auto my-2"></div>
                     <p class="text-md font-['Playfair_Display'] italic">3:00 PM</p>
-                    <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/c813f26822b2b3c59dc5ef601c7101e3-Photoroom.png" alt="[Icono de iglesia]" class="location-img mx-auto">
-                    <p class="text-[0.65rem] opacity-70 mb-3 px-3 italic">Av. de las Fuentes s/n, Lomas de San Juan, San Juan del Río, Qro.</p>
+                    <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/c813f26822b2b3c59dc5ef601c7101e3-Photoroom.png" alt="[Icono de iglesia]" class="location-img mx-auto" style="width: 100px;">
+                    <p class="text-[0.6rem] opacity-70 mb-2 px-3 italic">Av. de las Fuentes s/n, Lomas de San Juan, San Juan del Río, Qro.</p>
                     <a href="https://maps.app.goo.gl/B2kp9Qri1K5H3Lfb8" target="_blank" class="btn-action">Ver Ubicación</a>
                 </div>
             </div>
@@ -401,70 +392,51 @@
         <!-- 7. PÁGINA DE RECEPCIÓN (Reducida) -->
         <div class="page-view standard-bg">
             <div class="anim-fade w-full px-8 flex flex-col items-center">
-                <h2 class="section-title" style="font-size: 2.5rem;">Recepción</h2>
-                <div class="glass-card">
-                    <p class="font-bold text-[0.75rem] uppercase tracking-wider">Salón La Rinconada</p>
-                    <div class="h-px w-1/2 bg-blue-900/20 mx-auto my-3"></div>
+                <h2 class="section-title" style="font-size: 2.3rem;">Recepción</h2>
+                <div class="glass-card" style="transform: scale(0.95);">
+                    <p class="font-bold text-[0.7rem] uppercase tracking-wider">Salón La Rinconada</p>
+                    <div class="h-px w-1/2 bg-blue-900/20 mx-auto my-2"></div>
                     <p class="text-md font-['Playfair_Display'] italic">4:30 PM</p>
-                    <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/f6ee851f6b1fc3383be6cbdc8122a0f1-Photoroom.png" alt="[Icono de recepción]" class="location-img mx-auto">
-                    <p class="text-[0.65rem] opacity-70 mb-3 px-3 italic">Blvd. Hidalgo 124, Centro, San Juan del Río, Qro.</p>
+                    <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/f6ee851f6b1fc3383be6cbdc8122a0f1-Photoroom.png" alt="[Icono de recepción]" class="location-img mx-auto" style="width: 100px;">
+                    <p class="text-[0.6rem] opacity-70 mb-2 px-3 italic">Blvd. Hidalgo 124, Centro, San Juan del Río, Qro.</p>
                     <a href="https://maps.app.goo.gl/bATheHfGzLrv78NP7" target="_blank" class="btn-action">Ver Ubicación</a>
                 </div>
             </div>
         </div>
 
-        <!-- 8. ITINERARIO (Reducido un 5%) -->
-        <div class="page-view standard-bg">
+        <!-- 8. ITINERARIO (Reducido un 10% adicional) -->
+        <div class="page-view standard-bg" style="min-height: 90vh;">
             <div class="w-full px-4 flex flex-col items-center">
-                <h2 class="section-title anim-fade" style="font-size: 2.5rem;">Itinerario</h2>
+                <h2 class="section-title anim-fade" style="font-size: 2.3rem; margin-bottom: 10px;">Itinerario</h2>
                 <div class="itinerary-list">
-                    
                     <div class="itinerary-item anim-fade">
                         <div class="itinerary-icon-container">
                             <img src="https://img.icons8.com/ios-filled/100/1d6ba4/church.png" class="itinerary-icon-img" alt="[Icono de iglesia]">
                         </div>
-                        <div>
-                            <p class="font-bold text-[0.75rem] tracking-widest">MISA</p>
-                            <p class="text-[0.65rem] opacity-70 italic">3:00 PM</p>
-                        </div>
+                        <p class="font-bold text-[0.7rem] tracking-widest uppercase">Misa</p>
+                        <p class="text-[0.6rem] opacity-70 italic">3:00 PM</p>
                     </div>
-
                     <div class="itinerary-item anim-fade">
                         <div class="itinerary-icon-container">
                             <img src="https://img.icons8.com/ios-filled/100/1d6ba4/champagne-bottle.png" class="itinerary-icon-img" alt="[Icono de brindis]">
                         </div>
-                        <div>
-                            <p class="font-bold text-[0.75rem] tracking-widest">RECEPCIÓN</p>
-                            <p class="text-[0.65rem] opacity-70 italic">4:30 PM</p>
-                        </div>
+                        <p class="font-bold text-[0.7rem] tracking-widest uppercase">Recepción</p>
+                        <p class="text-[0.6rem] opacity-70 italic">4:30 PM</p>
                     </div>
-
                     <div class="itinerary-item anim-fade">
                         <div class="itinerary-icon-container">
                             <img src="https://img.icons8.com/ios-filled/100/1d6ba4/dining-room.png" class="itinerary-icon-img" alt="[Icono de comida]">
                         </div>
-                        <div>
-                            <p class="font-bold text-[0.75rem] tracking-widest">COMIDA</p>
-                            <p class="text-[0.65rem] opacity-70 italic">5:00 PM</p>
-                        </div>
+                        <p class="font-bold text-[0.7rem] tracking-widest uppercase">Comida</p>
+                        <p class="text-[0.6rem] opacity-70 italic">5:00 PM</p>
                     </div>
-
                     <div class="itinerary-item anim-fade">
                         <div class="itinerary-icon-container">
-                            <svg class="itinerary-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
-                                <g stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
-                                    <line x1="12" y1="4" x2="12" y2="20"/><line x1="4" y1="12" x2="20" y2="12"/>
-                                    <line x1="6.34" y1="6.34" x2="17.66" y2="17.66"/><line x1="6.34" y1="17.66" x2="17.66" y2="6.34"/>
-                                </g>
-                            </svg>
+                            <svg class="itinerary-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="1.5" fill="currentColor"/><g stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="12" y1="4" x2="12" y2="20"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="6.34" y1="6.34" x2="17.66" y2="17.66"/><line x1="6.34" y1="17.66" x2="17.66" y2="6.34"/></g></svg>
                         </div>
-                        <div>
-                            <p class="font-bold text-[0.75rem] tracking-widest">FIN DEL EVENTO</p>
-                            <p class="text-[0.65rem] opacity-70 italic">12:00 AM</p>
-                        </div>
+                        <p class="font-bold text-[0.7rem] tracking-widest uppercase">Fin del Evento</p>
+                        <p class="text-[0.6rem] opacity-70 italic">12:00 AM</p>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -484,7 +456,7 @@
         <div class="page-view standard-bg">
             <div class="anim-fade w-full px-6 flex flex-col items-center">
                 <h2 class="section-title">Confirmación</h2>
-                <p class="font-['Parisienne'] text-xl text-blue-900 mb-4 px-6 leading-relaxed">
+                <p class="font-['Parisienne'] text-xl text-blue-900 mb-4 px-6 leading-tight">
                     Tu presencia es el mejor regalo que me podrías dar, por favor confírmame tu asistencia para reservar tu lugar.
                 </p>
                 <div class="glass-card w-full">
@@ -496,14 +468,24 @@
             </div>
         </div>
 
-        <!-- 11. REGALOS -->
-        <div class="page-view standard-bg">
+        <!-- 11. REGALOS (Compactada) -->
+        <div class="page-view standard-bg" style="min-height: 60vh; padding-bottom: 20px;">
             <div class="anim-fade px-8">
-                <h2 class="section-title">Sugerencia de Regalos</h2>
-                <p class="text-xs italic max-w-xs mx-auto text-blue-800 opacity-90 mb-6">"Si deseas tener un detalle conmigo, puedes elegir el obsequio que desees o apoyarme mediante una lluvia de sobres."</p>
-                <div class="flex justify-center gap-8 items-center mt-4">
-                    <div class="flex flex-col items-center"><svg class="gift-icon-svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><span class="text-[10px] mt-1 font-bold">SOBRES</span></div>
-                    <div class="flex flex-col items-center"><svg class="gift-icon-svg" viewBox="0 0 24 24"><path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.65-.5-.65C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zM4 19V8h16v11H4z"/></svg><span class="text-[10px] mt-1 font-bold">REGALO</span></div>
+                <h2 class="section-title" style="font-size: 2.2rem; margin-bottom: 10px;">Regalos</h2>
+                <p class="text-[11px] italic max-w-xs mx-auto text-blue-800 opacity-90 mb-4 leading-normal">"Si deseas tener un detalle conmigo, puedes elegir el obsequio que desees o apoyarme mediante una lluvia de sobres."</p>
+                <div class="flex justify-center gap-10 items-center">
+                    <div class="flex flex-col items-center">
+                        <div class="w-12 h-12 bg-white/30 rounded-full flex items-center justify-center mb-1">
+                            <svg class="gift-icon-svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        </div>
+                        <span class="text-[9px] font-bold tracking-widest">SOBRES</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-12 h-12 bg-white/30 rounded-full flex items-center justify-center mb-1">
+                            <svg class="gift-icon-svg" viewBox="0 0 24 24"><path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.65-.5-.65C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zM4 19V8h16v11H4z"/></svg>
+                        </div>
+                        <span class="text-[9px] font-bold tracking-widest">DETALLE</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -511,30 +493,26 @@
         <!-- 12. FOTOS -->
         <div class="page-view standard-bg">
             <div class="anim-fade px-10">
-                <h2 class="section-title">Captura la Magia</h2>
-                <div class="glass-card mx-auto flex flex-col items-center">
-                    <p class="text-xs mb-4">¡Ayúdame a guardar cada momento! Escanea el código QR o usa el botón para subir tus fotos.</p>
-                    
-                    <!-- Contenedor del QR -->
-                    <div class="qr-container">
+                <h2 class="section-title" style="font-size: 2.3rem;">Fotos</h2>
+                <div class="glass-card mx-auto flex flex-col items-center" style="padding: 15px;">
+                    <p class="text-[10px] mb-3 leading-snug">¡Ayúdame a guardar cada momento! Escanea el QR o usa el botón para compartir tus fotos.</p>
+                    <div class="qr-container" style="width: 140px; height: 140px;">
                         <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/WhatsApp%20Image%202026-04-02%20at%2010.19.04%20AM%20(1).jpeg" alt="[Código QR para fotos]" class="qr-img">
                     </div>
-                    
-                    <p class="text-[10px] uppercase tracking-widest font-bold my-2 opacity-60">— O TAMBIÉN —</p>
-                    
-                    <a href="https://disposable.app/album/41394/2e403d13c6e9c5dc79cd9595" target="_blank" class="btn-action btn-camera">📤 Subir con Link</a>
+                    <p class="text-[9px] uppercase tracking-widest font-bold my-2 opacity-60">— O —</p>
+                    <a href="https://disposable.app/album/41394/2e403d13c6e9c5dc79cd9595" target="_blank" class="btn-action btn-camera" style="margin-top: 0;">📤 Compartir Link</a>
                 </div>
             </div>
         </div>
 
-        <!-- 13. AGRADECIMIENTO -->
+        <!-- 13. AGRADECIMIENTO (Interlineado aumentado en el nombre) -->
         <div class="page-view standard-bg">
             <div class="anim-fade px-8 flex flex-col items-center">
                 <h2 class="section-title">¡Gracias!</h2>
                 <p class="text-[0.9rem] italic leading-[1.8] opacity-80 max-w-xs mx-auto">
                     "Gracias por ser parte de mi historia y por acompañarme en este sueño hecho realidad."
                 </p>
-                <h3 class="font-['Great_Vibes'] text-5xl text-blue-900 mt-16">Jimena Camila</h3>
+                <h3 class="font-['Great_Vibes'] text-5xl text-blue-900 mt-16" style="line-height: 1.33;">Jimena Camila</h3>
                 <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/df8e56933f3bf2fe6e5190fe68086a79-Photoroom.png" alt="[Decoración final]" class="thanks-img">
             </div>
         </div>
@@ -559,7 +537,7 @@
             }, 1000);
         });
 
-        const observerOptions = { threshold: 0.2, root: scrollContainer };
+        const observerOptions = { threshold: 0.1, root: scrollContainer };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => { 
                 if (entry.isIntersecting) entry.target.classList.add('anim-visible'); 
