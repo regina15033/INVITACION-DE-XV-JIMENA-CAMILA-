@@ -93,10 +93,10 @@
         .calendar-wrapper {
             background: rgba(255, 255, 255, 0.3);
             backdrop-filter: blur(8px);
-            padding: 12px; border-radius: 15px; width: 220px;
-            margin: 15px auto; border: 1px solid rgba(29, 107, 164, 0.2);
+            padding: 10px; border-radius: 15px; width: 200px;
+            margin: 10px auto; border: 1px solid rgba(29, 107, 164, 0.2);
         }
-        .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; font-size: 0.7rem; }
+        .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; font-size: 0.65rem; }
         
         .heart-marker { 
             position: absolute; 
@@ -106,8 +106,8 @@
             left: 50%;
             transform: translate(-50%, -50%);
             pointer-events: none;
-            width: 2.13rem;
-            height: 2.13rem;
+            width: 1.8rem;
+            height: 1.8rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -119,11 +119,11 @@
             height: 100%;
         }
 
-        /* Contador */
+        /* Contador - Reducido un 10% adicional */
         .timer-circle {
-            width: 66.5px;
-            height: 66.5px;
-            border: 2px solid var(--custom-blue);
+            width: 54px;
+            height: 54px;
+            border: 1.5px solid var(--custom-blue);
             border-radius: 50%;
             display: flex;
             flex-direction: column;
@@ -133,63 +133,64 @@
             backdrop-filter: blur(5px);
         }
 
-        /* Itinerario */
+        /* Itinerario - Reducido un 5% */
         .itinerary-list {
             display: flex;
             flex-direction: column;
-            gap: 30px; 
+            gap: 22px; 
             width: 100%;
-            max-width: 320px;
-            margin: 20px auto;
+            max-width: 300px;
+            margin: 15px auto;
             align-items: center; 
         }
         .itinerary-item {
             display: flex;
             flex-direction: column; 
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             text-align: center;
             width: 100%;
         }
         .itinerary-icon-container {
-            width: 55px;
-            height: 55px;
+            width: 48px;
+            height: 48px;
             display: flex;
             align-items: center;
             justify-content: center;
             background: rgba(255, 255, 255, 0.3);
             border-radius: 50%;
         }
-        .itinerary-icon-img { width: 30px; height: 30px; object-fit: contain; }
-        .itinerary-svg { width: 35px; height: 35px; fill: var(--custom-blue); }
+        .itinerary-icon-img { width: 26px; height: 26px; object-fit: contain; }
+        .itinerary-svg { width: 30px; height: 30px; fill: var(--custom-blue); }
 
         /* Botones */
         .btn-action {
             background-color: var(--custom-blue);
             color: white;
-            padding: 12px 25px;
+            padding: 10px 22px;
             border-radius: 50px;
-            font-size: 0.7rem;
-            letter-spacing: 1.5px;
+            font-size: 0.65rem;
+            letter-spacing: 1.2px;
             font-weight: 600;
             text-transform: uppercase;
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            margin-top: 15px;
+            gap: 6px;
+            margin-top: 10px;
             box-shadow: 0 4px 15px rgba(29, 107, 164, 0.3);
         }
         .btn-camera { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
 
+        /* Tarjetas Misa/Recepción - Reducidas un 10% */
         .glass-card {
             background: rgba(255, 255, 255, 0.5);
             backdrop-filter: blur(10px);
-            padding: 30px 20px;
-            border-radius: 25px;
-            width: 90%;
-            max-width: 350px;
+            padding: 22px 18px;
+            border-radius: 22px;
+            width: 85%;
+            max-width: 320px;
             border: 1px solid rgba(255, 255, 255, 0.4);
             box-shadow: 0 10px 30px rgba(29, 107, 164, 0.1);
         }
@@ -199,10 +200,10 @@
             width: 100%;
             background: rgba(255, 255, 255, 0.8);
             border: 1px solid rgba(29, 107, 164, 0.2);
-            padding: 14px;
-            border-radius: 12px;
-            margin-bottom: 15px;
-            font-size: 0.85rem;
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            font-size: 0.8rem;
             color: var(--darker-blue);
             outline: none;
         }
@@ -210,12 +211,12 @@
             background: linear-gradient(135deg, var(--custom-blue), var(--darker-blue));
             color: white;
             width: 100%;
-            padding: 15px;
-            border-radius: 12px;
+            padding: 12px;
+            border-radius: 10px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
         }
 
         /* Sobre */
@@ -238,21 +239,41 @@
             transform: translate(-50%, 0%); z-index: 5; display: flex; align-items: center; justify-content: center;
         }
 
-        .castle-image { width: 90%; max-width: 400px; filter: drop-shadow(0px 0px 10px rgba(29, 107, 164, 0.4)); margin-top: 20px; }
-        
-        /* Ajuste solicitado: 20% más grande y 20% a la derecha */
+        .castle-image { width: 85%; max-width: 380px; filter: drop-shadow(0px 0px 10px rgba(29, 107, 164, 0.4)); margin-top: 15px; }
         .dress-code-img { 
-            width: 720px; /* Aumentado 20% de 600px */
-            max-width: 114%; /* Ajuste relativo para pantalla móvil */
+            width: 720px; 
+            max-width: 114%; 
             margin-top: 20px; 
             filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.2)); 
-            transform: translateX(20%); /* Movido 20% a la derecha */
+            transform: translateX(20%); 
         }
         
-        .location-img { width: 140px; margin: 15px auto; }
-        .separator-img { width: 120px; margin: 20px auto; opacity: 0.8; }
-        .gift-icon-svg { width: 40px; height: 40px; fill: var(--custom-blue); }
-        .thanks-img { width: 280px; margin-top: 30px; filter: drop-shadow(0px 4px 15px rgba(29, 107, 164, 0.3)); }
+        .location-img { width: 120px; margin: 12px auto; }
+        .separator-img { width: 110px; margin: 15px auto; opacity: 0.8; }
+        .gift-icon-svg { width: 35px; height: 35px; fill: var(--custom-blue); }
+        .thanks-img { width: 250px; margin-top: 25px; filter: drop-shadow(0px 4px 15px rgba(29, 107, 164, 0.3)); }
+        
+        /* Imagen específica para padrinos */
+        .godparents-img { width: 180px; margin: 15px auto; filter: drop-shadow(0px 4px 10px rgba(29, 107, 164, 0.2)); }
+
+        /* Estilos específicos para el QR */
+        .qr-container {
+            width: 170px;
+            height: 170px;
+            background: white;
+            padding: 8px;
+            border-radius: 15px;
+            margin: 12px auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .qr-img { width: 100%; height: 100%; object-fit: contain; }
+
+        /* Nueva imagen debajo de cuenta regresiva */
+        .countdown-bottom-img {
+            width: 160px;
+            margin: 10px auto;
+            filter: drop-shadow(0px 4px 8px rgba(29, 107, 164, 0.2));
+        }
     </style>
 </head>
 <body>
@@ -313,22 +334,25 @@
 
         <!-- 4. MIS PADRINOS -->
         <div class="page-view standard-bg">
-            <div class="anim-fade w-full px-8">
+            <div class="anim-fade w-full px-8 flex flex-col items-center">
                 <h2 class="section-title">Mis Padrinos</h2>
-                <div class="mx-auto">
+                <div class="mx-auto mb-6">
                     <p class="names-display">Lorena Ruiz Cabrera <br> <span class="text-xs opacity-50">&</span> <br> Jorge Beltrán Villegas</p>
                 </div>
-                <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/297cda702ffcaae7b211cd8a189365c9-Photoroom.png" alt="[Divisor decorativo]" class="separator-img">
+                <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/928916ca276e8cebf1980a03b5741d49-Photoroom.png" alt="[Decoración de padrinos]" class="godparents-img">
                 <p class="text-[0.8rem] italic mt-4 px-6 opacity-70">"Es un honor para mí que me acompañen en este día tan especial como mis padrinos."</p>
             </div>
         </div>
 
         <!-- 5. CALENDARIO + COUNTDOWN -->
         <div class="page-view standard-bg">
-            <div class="anim-fade flex flex-col items-center">
-                <h2 class="section-title" style="font-size: 2.2rem;">Reserva la Fecha</h2>
+            <!-- Subido un 15% mediante transformación negativa -->
+            <div class="anim-fade flex flex-col items-center" style="transform: translateY(-15%);">
+                <h2 class="section-title" style="font-size: 2.2rem; line-height: 1.1;">
+                    Reserva <br> <span style="font-size: 2.6rem;">la Fecha</span>
+                </h2>
                 <div class="calendar-wrapper">
-                    <div class="font-bold text-[0.8rem] mb-2 uppercase tracking-widest">Mayo 2026</div>
+                    <div class="font-bold text-[0.7rem] mb-2 uppercase tracking-widest">Mayo 2026</div>
                     <div class="calendar-grid">
                         <div class="opacity-50">D</div><div class="opacity-50">L</div><div class="opacity-50">M</div><div class="opacity-50">M</div><div class="opacity-50">J</div><div class="opacity-50">V</div><div class="opacity-50">S</div>
                         <div></div><div></div><div></div><div></div><div></div><div>1</div>
@@ -344,79 +368,84 @@
                         <div>10</div><div>11</div><div>12</div><div>13</div><div>14</div><div>15</div><div>16</div>
                     </div>
                 </div>
-                <div class="flex gap-2 my-6">
-                    <div class="timer-circle"><span id="days" class="text-xl font-bold">00</span><span class="text-[7px] uppercase">Días</span></div>
-                    <div class="timer-circle"><span id="hours" class="text-xl font-bold">00</span><span class="text-[7px] uppercase">Hrs</span></div>
-                    <div class="timer-circle"><span id="minutes" class="text-xl font-bold">00</span><span class="text-[7px] uppercase">Min</span></div>
-                    <div class="timer-circle"><span id="seconds" class="text-xl font-bold">00</span><span class="text-[7px] uppercase">Seg</span></div>
+                <!-- Círculos reducidos por CSS -->
+                <div class="flex gap-2 my-4">
+                    <div class="timer-circle"><span id="days" class="text-lg font-bold">00</span><span class="text-[6px] uppercase">Días</span></div>
+                    <div class="timer-circle"><span id="hours" class="text-lg font-bold">00</span><span class="text-[6px] uppercase">Hrs</span></div>
+                    <div class="timer-circle"><span id="minutes" class="text-lg font-bold">00</span><span class="text-[6px] uppercase">Min</span></div>
+                    <div class="timer-circle"><span id="seconds" class="text-lg font-bold">00</span><span class="text-[6px] uppercase">Seg</span></div>
                 </div>
+                
+                <!-- Imagen añadida debajo de la cuenta regresiva -->
+                <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/852d2b55ae504af05080eaa25d0f2a74-Photoroom.png" alt="[Decoración mágica]" class="countdown-bottom-img">
+                
                 <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Mis+15+Años+-+Jimena+Camila&dates=20260502T210000Z/20260503T050000Z&location=Salón+La+Rinconada" target="_blank" class="btn-action">📅 Agendar Fecha</a>
             </div>
         </div>
 
-        <!-- 6. PÁGINA DE MISA -->
+        <!-- 6. PÁGINA DE MISA (Reducida) -->
         <div class="page-view standard-bg">
             <div class="anim-fade w-full px-8 flex flex-col items-center">
-                <h2 class="section-title">Ceremonia Religiosa</h2>
+                <h2 class="section-title" style="font-size: 2.5rem;">Ceremonia Religiosa</h2>
                 <div class="glass-card">
-                    <p class="font-bold text-sm uppercase tracking-wider">Parroquia de Jesucristo Sumo y Eterno Sacerdote</p>
-                    <div class="h-px w-1/2 bg-blue-900/20 mx-auto my-4"></div>
-                    <p class="text-lg font-['Playfair_Display'] italic">3:00 PM</p>
+                    <p class="font-bold text-[0.75rem] uppercase tracking-wider">Parroquia de Jesucristo Sumo y Eterno Sacerdote</p>
+                    <div class="h-px w-1/2 bg-blue-900/20 mx-auto my-3"></div>
+                    <p class="text-md font-['Playfair_Display'] italic">3:00 PM</p>
                     <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/c813f26822b2b3c59dc5ef601c7101e3-Photoroom.png" alt="[Icono de iglesia]" class="location-img mx-auto">
-                    <p class="text-[0.7rem] opacity-70 mb-4 px-4 italic">Av. de las Fuentes s/n, Lomas de San Juan, San Juan del Río, Qro.</p>
+                    <p class="text-[0.65rem] opacity-70 mb-3 px-3 italic">Av. de las Fuentes s/n, Lomas de San Juan, San Juan del Río, Qro.</p>
                     <a href="https://maps.app.goo.gl/B2kp9Qri1K5H3Lfb8" target="_blank" class="btn-action">Ver Ubicación</a>
                 </div>
             </div>
         </div>
 
-        <!-- 7. PÁGINA DE RECEPCIÓN -->
+        <!-- 7. PÁGINA DE RECEPCIÓN (Reducida) -->
         <div class="page-view standard-bg">
             <div class="anim-fade w-full px-8 flex flex-col items-center">
-                <h2 class="section-title">Recepción</h2>
+                <h2 class="section-title" style="font-size: 2.5rem;">Recepción</h2>
                 <div class="glass-card">
-                    <p class="font-bold text-sm uppercase tracking-wider">Salón La Rinconada</p>
-                    <div class="h-px w-1/2 bg-blue-900/20 mx-auto my-4"></div>
-                    <p class="text-lg font-['Playfair_Display'] italic">4:30 PM</p>
+                    <p class="font-bold text-[0.75rem] uppercase tracking-wider">Salón La Rinconada</p>
+                    <div class="h-px w-1/2 bg-blue-900/20 mx-auto my-3"></div>
+                    <p class="text-md font-['Playfair_Display'] italic">4:30 PM</p>
                     <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/f6ee851f6b1fc3383be6cbdc8122a0f1-Photoroom.png" alt="[Icono de recepción]" class="location-img mx-auto">
-                    <p class="text-[0.7rem] opacity-70 mb-4 px-4 italic">Blvd. Hidalgo 124, Centro, San Juan del Río, Qro.</p>
+                    <p class="text-[0.65rem] opacity-70 mb-3 px-3 italic">Blvd. Hidalgo 124, Centro, San Juan del Río, Qro.</p>
                     <a href="https://maps.app.goo.gl/bATheHfGzLrv78NP7" target="_blank" class="btn-action">Ver Ubicación</a>
                 </div>
             </div>
         </div>
 
-        <!-- 8. ITINERARIO -->
+        <!-- 8. ITINERARIO (Reducido un 5%) -->
         <div class="page-view standard-bg">
             <div class="w-full px-4 flex flex-col items-center">
-                <h2 class="section-title anim-fade">Itinerario</h2>
+                <h2 class="section-title anim-fade" style="font-size: 2.5rem;">Itinerario</h2>
                 <div class="itinerary-list">
                     
                     <div class="itinerary-item anim-fade">
                         <div class="itinerary-icon-container">
-                            <img src="https://img.icons8.com/ios-filled/100/1d6ba4/church.png" class="itinerary-icon-img" alt="[Misa]">
+                            <img src="https://img.icons8.com/ios-filled/100/1d6ba4/church.png" class="itinerary-icon-img" alt="[Icono de iglesia]">
                         </div>
                         <div>
-                            <p class="font-bold text-[0.8rem] tracking-widest">MISA</p>
-                            <p class="text-[0.7rem] opacity-70 italic">3:00 PM</p>
+                            <p class="font-bold text-[0.75rem] tracking-widest">MISA</p>
+                            <p class="text-[0.65rem] opacity-70 italic">3:00 PM</p>
                         </div>
                     </div>
 
                     <div class="itinerary-item anim-fade">
                         <div class="itinerary-icon-container">
-                            <img src="https://img.icons8.com/ios-filled/100/1d6ba4/champagne-bottle.png" class="itinerary-icon-img" alt="[Recepción]">
+                            <img src="https://img.icons8.com/ios-filled/100/1d6ba4/champagne-bottle.png" class="itinerary-icon-img" alt="[Icono de brindis]">
                         </div>
                         <div>
-                            <p class="font-bold text-[0.8rem] tracking-widest">RECEPCIÓN</p>
-                            <p class="text-[0.7rem] opacity-70 italic">4:30 PM</p>
+                            <p class="font-bold text-[0.75rem] tracking-widest">RECEPCIÓN</p>
+                            <p class="text-[0.65rem] opacity-70 italic">4:30 PM</p>
                         </div>
                     </div>
 
                     <div class="itinerary-item anim-fade">
                         <div class="itinerary-icon-container">
-                            <img src="https://img.icons8.com/ios-filled/100/1d6ba4/dining-room.png" class="itinerary-icon-img" alt="[Comida]">
+                            <img src="https://img.icons8.com/ios-filled/100/1d6ba4/dining-room.png" class="itinerary-icon-img" alt="[Icono de comida]">
                         </div>
                         <div>
-                            <p class="font-bold text-[0.8rem] tracking-widest">COMIDA</p>
-                            <p class="text-[0.7rem] opacity-70 italic">5:00 PM</p>
+                            <p class="font-bold text-[0.75rem] tracking-widest">COMIDA</p>
+                            <p class="text-[0.65rem] opacity-70 italic">5:00 PM</p>
                         </div>
                     </div>
 
@@ -431,8 +460,8 @@
                             </svg>
                         </div>
                         <div>
-                            <p class="font-bold text-[0.8rem] tracking-widest">FIN DEL EVENTO</p>
-                            <p class="text-[0.7rem] opacity-70 italic">12:00 AM</p>
+                            <p class="font-bold text-[0.75rem] tracking-widest">FIN DEL EVENTO</p>
+                            <p class="text-[0.65rem] opacity-70 italic">12:00 AM</p>
                         </div>
                     </div>
 
@@ -483,9 +512,17 @@
         <div class="page-view standard-bg">
             <div class="anim-fade px-10">
                 <h2 class="section-title">Captura la Magia</h2>
-                <div class="glass-card mx-auto">
-                    <p class="text-xs mb-6">¡Ayúdame a guardar cada momento! Sube tus fotos y videos aquí para que pueda verlos después.</p>
-                    <a href="https://disposable.app/album/41394/2e403d13c6e9c5dc79cd9595" target="_blank" class="btn-action btn-camera">📤 Álbum de Fotos</a>
+                <div class="glass-card mx-auto flex flex-col items-center">
+                    <p class="text-xs mb-4">¡Ayúdame a guardar cada momento! Escanea el código QR o usa el botón para subir tus fotos.</p>
+                    
+                    <!-- Contenedor del QR -->
+                    <div class="qr-container">
+                        <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/WhatsApp%20Image%202026-04-02%20at%2010.19.04%20AM%20(1).jpeg" alt="[Código QR para fotos]" class="qr-img">
+                    </div>
+                    
+                    <p class="text-[10px] uppercase tracking-widest font-bold my-2 opacity-60">— O TAMBIÉN —</p>
+                    
+                    <a href="https://disposable.app/album/41394/2e403d13c6e9c5dc79cd9595" target="_blank" class="btn-action btn-camera">📤 Subir con Link</a>
                 </div>
             </div>
         </div>
