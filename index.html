@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invitación de Jimena Camila</title>
+    
+    <!-- Título de la pestaña -->
+    <title>Mis xv Jimena Camila 💙</title>
 
-    <!-- Configuración para la vista previa en WhatsApp y Redes Sociales -->
-    <meta property="og:title" content="Invitación XV Años - Jimena Camila">
+    <!-- Configuración para la vista previa en WhatsApp -->
+    <meta property="og:title" content="Mis xv Jimena Camila 💙">
     <meta property="og:description" content="¡Te espero para celebrar juntos este día tan especial! ✨">
     <meta property="og:image" content="https://raw.githubusercontent.com/regina15033/xv-camila/main/portadas%20%20(1).jpg">
     <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://regina15033.github.io/INVITACION-DE-XV-JIMENA-CAMILA-/">
     <meta property="og:type" content="website">
 
@@ -101,7 +101,15 @@
 
         .section-title { font-family: 'Parisienne', cursive; font-size: 2.8rem; color: var(--darker-blue); margin-bottom: 20px; }
         .text-juntos { font-family: 'Parisienne', cursive; font-size: 2.5rem; }
-        .names-display { font-family: 'Cinzel', serif; font-size: 1.1rem; letter-spacing: 2px; line-height: 1.8; }
+        
+        /* Tipografía cursiva para nombres de padres y padrinos */
+        .names-display { 
+            font-family: 'Great Vibes', cursive; 
+            font-size: 1.8rem; 
+            letter-spacing: 1px; 
+            line-height: 1.2; 
+            color: var(--darker-blue);
+        }
 
         /* Calendario */
         .calendar-wrapper {
@@ -146,7 +154,7 @@
             backdrop-filter: blur(5px);
         }
 
-        /* Itinerario - Aumento de 10% */
+        /* Itinerario */
         .itinerary-list {
             display: flex;
             flex-direction: column;
@@ -155,7 +163,7 @@
             max-width: 310px;
             margin: 10px auto;
             align-items: center;
-            transform: scale(1.0); /* Ajustado de 0.9 a 1.0 aprox 10% */
+            transform: scale(1.0);
         }
         .itinerary-item {
             display: flex;
@@ -166,7 +174,7 @@
             width: 100%;
         }
         .itinerary-icon-container {
-            width: 48px; /* Aumentado 10% */
+            width: 48px;
             height: 48px;
             display: flex;
             align-items: center;
@@ -174,10 +182,10 @@
             background: rgba(255, 255, 255, 0.3);
             border-radius: 50%;
         }
-        .itinerary-icon-img { width: 25px; height: 25px; object-fit: contain; } /* Aumentado */
-        .itinerary-svg { width: 30px; height: 30px; fill: var(--custom-blue); } /* Aumentado */
-        .itinerary-text-title { font-size: 0.77rem; } /* Aumentado */
-        .itinerary-text-time { font-size: 0.66rem; } /* Aumentado */
+        .itinerary-icon-img { width: 25px; height: 25px; object-fit: contain; }
+        .itinerary-svg { width: 30px; height: 30px; fill: var(--custom-blue); }
+        .itinerary-text-title { font-size: 0.77rem; }
+        .itinerary-text-time { font-size: 0.66rem; }
 
         /* Botones */
         .btn-action {
@@ -215,30 +223,6 @@
             box-shadow: 0 10px 30px rgba(29, 107, 164, 0.1);
         }
 
-        /* Formulario */
-        .confirm-input {
-            width: 100%;
-            background: rgba(255, 255, 255, 0.8);
-            border: 1px solid rgba(29, 107, 164, 0.2);
-            padding: 12px;
-            border-radius: 10px;
-            margin-bottom: 12px;
-            font-size: 0.8rem;
-            color: var(--darker-blue);
-            outline: none;
-        }
-        .btn-confirm {
-            background: linear-gradient(135deg, var(--custom-blue), var(--darker-blue));
-            color: white;
-            width: 100%;
-            padding: 12px;
-            border-radius: 10px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.7rem;
-        }
-
         /* Sobre */
         .envelope {
             position: relative;
@@ -261,7 +245,6 @@
 
         .castle-image { width: 85%; max-width: 380px; filter: drop-shadow(0px 0px 10px rgba(29, 107, 164, 0.4)); margin-top: 15px; }
         
-        /* Dress Code - Mover 1% a la izquierda (9%) */
         .dress-code-img { 
             width: 720px; 
             max-width: 114%; 
@@ -294,12 +277,35 @@
         }
 
         .decorative-img { width: 140px; margin-top: 15px; filter: drop-shadow(0px 4px 8px rgba(29, 107, 164, 0.2)); }
+
+        .confirm-input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(29, 107, 164, 0.2);
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            font-size: 0.8rem;
+            color: var(--darker-blue);
+            outline: none;
+        }
+        .btn-confirm {
+            background: linear-gradient(135deg, var(--custom-blue), var(--darker-blue));
+            color: white;
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.7rem;
+        }
     </style>
 </head>
 <body>
 
     <audio id="bg-music" loop>
-        <source src="https://raw.githubusercontent.com/regina15033/xv-camila/main/Lana%20del%20Rey%20%E2%80%94%20Once%20Upon%20a%20Dream%20%20%5BSub%20(mp3cut%20(mp3cut.net).m4a" type="audio/mpeg">
+        <source src="https://raw.githubusercontent.com/regina15033/BTS-BUTERFLY/main/BTS%20%EB%B0%A9%ED%83%84%EC%86%8C%EB%85%84%EB%8B%A8%20-%20Butterfly%20Piano%20Cover.mp3" type="audio/mpeg">
     </audio>
 
     <div id="view-envelope">
@@ -315,7 +321,8 @@
         <!-- 1. PORTADA -->
         <div id="view-invitation" class="page-view">
             <div class="absolute bottom-10 left-0 w-full text-center p-8 bg-white/30 backdrop-blur-md">
-                 <h2 class="font-['Great_Vibes'] text-6xl text-blue-900">Jimena Camila</h2>
+                 <!-- Se aumentó el line-height un 4% para evitar que las letras se junten -->
+                 <h2 class="font-['Great_Vibes'] text-6xl text-blue-900" style="line-height: 1.4;">Jimena Camila</h2>
                  <p class="text-sm tracking-[5px] text-blue-900 font-semibold mt-2">MIS 15 AÑOS</p>
                  <p class="text-[10px] mt-6 animate-bounce opacity-70">Desliza para ver más ↓</p>
             </div>
@@ -345,7 +352,7 @@
             <div class="anim-fade w-full px-8">
                 <h2 class="section-title">Mis Papás</h2>
                 <div class="mx-auto mb-4">
-                    <p class="names-display">Adriana Ruiz Cabrera <br> <span class="text-xs opacity-50">&</span> <br> Miguel Angel Olvera</p>
+                    <p class="names-display">Adriana Ruiz Cabrera <br> <span class="text-lg opacity-60">&</span> <br> Miguel Angel Olvera Valderas</p>
                 </div>
                 <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/297cda702ffcaae7b211cd8a189365c9-Photoroom.png" alt="[Imagen de Divisor decorativo]" class="separator-img">
                 <p class="text-[0.8rem] italic mt-4 px-6 opacity-70">"Gracias por darme la vida y por ser mi guía constante en este camino."</p>
@@ -357,7 +364,7 @@
             <div class="anim-fade w-full px-8 flex flex-col items-center">
                 <h2 class="section-title">Mis Padrinos</h2>
                 <div class="mx-auto mb-6">
-                    <p class="names-display">Lorena Ruiz Cabrera <br> <span class="text-xs opacity-50">&</span> <br> Jorge Beltrán Villegas</p>
+                    <p class="names-display">Lorena Ruiz Cabrera <br> <span class="text-lg opacity-60">&</span> <br> Jorge Beltrán Villegas</p>
                 </div>
                 <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/928916ca276e8cebf1980a03b5741d49-Photoroom.png" alt="[Imagen de Decoración de padrinos]" class="godparents-img">
                 <p class="text-[0.8rem] italic mt-4 px-6 opacity-70">"Es un honor para mí que me acompañen en este día tan especial como mis padrinos."</p>
@@ -394,7 +401,7 @@
                     <div class="timer-circle"><span id="seconds" class="text-lg font-bold">00</span><span class="text-[6px] uppercase">Seg</span></div>
                 </div>
                 <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/852d2b55ae504af05080eaa25d0f2a74-Photoroom.png" alt="[Imagen de Decoración mágica]" class="countdown-bottom-img">
-                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Mis+15+Años+-+Jimena+Camila&dates=20260502T210000Z/20260503T050000Z&location=Salón+La+Rinconada" target="_blank" class="btn-action">📅 Agendar Fecha</a>
+                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Mis+15+Años+-+Jimena+Camila&dates=20260502T210000Z/20260503T050000Z&location=La+Ca%C3%B1ada" target="_blank" class="btn-action">📅 Agendar Fecha</a>
             </div>
         </div>
 
@@ -403,32 +410,32 @@
             <div class="anim-fade w-full px-8 flex flex-col items-center">
                 <h2 class="section-title" style="font-size: 2.3rem;">Ceremonia Religiosa</h2>
                 <div class="glass-card" style="transform: scale(0.95);">
-                    <p class="font-bold text-[0.7rem] uppercase tracking-wider">Parroquia de Jesucristo Sumo y Eterno Sacerdote</p>
+                    <p class="font-bold text-[0.7rem] uppercase tracking-wider">Parroquia del Sagrado Corazón de Jesús</p>
                     <div class="h-px w-1/2 bg-blue-900/20 mx-auto my-2"></div>
                     <p class="text-md font-['Playfair_Display'] italic">3:00 PM</p>
                     <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/c813f26822b2b3c59dc5ef601c7101e3-Photoroom.png" alt="[Imagen de Icono de iglesia]" class="location-img mx-auto" style="width: 100px;">
-                    <p class="text-[0.6rem] opacity-70 mb-2 px-3 italic">Av. de las Fuentes s/n, Lomas de San Juan, San Juan del Río, Qro.</p>
-                    <a href="https://maps.app.goo.gl/B2kp9Qri1K5H3Lfb8" target="_blank" class="btn-action">Ver Ubicación</a>
+                    <p class="text-[0.6rem] opacity-70 mb-2 px-3 italic">PLaya Roqueta Av. pie de la cuesta #101, col. Desarrollo San Pablo</p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Playa+Roqueta+Av+pie+de+la+cuesta+101+Desarrollo+San+Pablo" target="_blank" class="btn-action">Ver Ubicación</a>
                 </div>
             </div>
         </div>
 
-        <!-- 7. PÁGINA DE RECEPCIÓN - Tamaño de página reducido un 10% (90vh) -->
+        <!-- 7. PÁGINA DE RECEPCIÓN -->
         <div class="page-view standard-bg" style="min-height: 90vh;">
             <div class="anim-fade w-full px-8 flex flex-col items-center">
                 <h2 class="section-title" style="font-size: 2.3rem;">Recepción</h2>
                 <div class="glass-card" style="transform: scale(0.85);"> 
-                    <p class="font-bold text-[0.735rem] uppercase tracking-wider">Salón La Rinconada</p> 
+                    <p class="font-bold text-[0.735rem] uppercase tracking-wider">La Cañada</p> 
                     <div class="h-px w-1/2 bg-blue-900/20 mx-auto my-2"></div>
                     <p class="text-[1.05rem] font-['Playfair_Display'] italic">4:30 PM</p> 
                     <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/f6ee851f6b1fc3383be6cbdc8122a0f1-Photoroom.png" alt="[Imagen de Icono de recepción]" class="location-img mx-auto" style="width: 90px;">
-                    <p class="text-[0.63rem] opacity-70 mb-2 px-3 italic">Blvd. Hidalgo 124, Centro, San Juan del Río, Qro.</p> 
-                    <a href="https://maps.app.goo.gl/bATheHfGzLrv78NP7" target="_blank" class="btn-action" style="font-size: 0.68rem;">Ver Ubicación</a> 
+                    <p class="text-[0.63rem] opacity-70 mb-2 px-3 italic">Avenida del Marques, Ricardo Avendaño s/n La Cañada</p> 
+                    <a href="https://www.google.com/maps/search/?api=1&query=Avenida+del+Marques+Ricardo+Avendaño+s/n+La+Cañada" target="_blank" class="btn-action" style="font-size: 0.68rem;">Ver Ubicación</a> 
                 </div>
             </div>
         </div>
 
-        <!-- 8. ITINERARIO - Iconos y texto aumentados 10% -->
+        <!-- 8. ITINERARIO -->
         <div class="page-view standard-bg" style="min-height: 90vh;">
             <div class="w-full px-4 flex flex-col items-center">
                 <h2 class="section-title anim-fade" style="font-size: 2.3rem; margin-bottom: 10px;">Itinerario</h2>
@@ -465,9 +472,9 @@
             </div>
         </div>
 
-        <!-- 9. DRESS CODE - Imagen movida y texto bajado -->
+        <!-- 9. DRESS CODE -->
         <div class="page-view standard-bg overflow-hidden">
-            <div class="anim-fade px-4 w-full" style="margin-top: 10%;"> <!-- Bajado 10% aprox -->
+            <div class="anim-fade px-4 w-full" style="margin-top: 10%;">
                 <h2 class="section-title">Dress Code</h2>
                 <p class="text-xs italic px-6 max-w-xs mx-auto text-blue-800 opacity-90 leading-relaxed font-semibold" style="margin-top: 5%;"> 
                     Te pedimos que evites el color azul en tu vestimenta, ya que este estará reservado para la quinceañera.
@@ -515,7 +522,7 @@
             </div>
         </div>
 
-        <!-- 12. FOTOS - Texto cambiado -->
+        <!-- 12. FOTOS -->
         <div class="page-view standard-bg">
             <div class="anim-fade px-10 flex flex-col items-center" style="transform: translateY(-10%);">
                 <h2 class="section-title" style="font-size: 2.3rem;">Captura el momento</h2>
@@ -533,9 +540,9 @@
             </div>
         </div>
 
-        <!-- 13. AGRADECIMIENTO - Texto bajado 12% -->
+        <!-- 13. AGRADECIMIENTO -->
         <div class="page-view standard-bg">
-            <div class="anim-fade px-8 flex flex-col items-center" style="margin-top: 22vh;"> <!-- Ajustado de 10vh a 22vh (aprox 12% extra) -->
+            <div class="anim-fade px-8 flex flex-col items-center" style="margin-top: 22vh;">
                 <h2 class="section-title">¡Gracias!</h2>
                 <p class="text-[0.9rem] italic leading-[1.8] opacity-80 max-w-xs mx-auto">
                     "Gracias por ser parte de mi historia y por acompañarme en este sueño hecho realidad."
