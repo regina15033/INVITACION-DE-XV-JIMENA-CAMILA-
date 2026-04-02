@@ -131,7 +131,7 @@
             backdrop-filter: blur(5px);
         }
 
-        /* Itinerario - Reducido un 10% adicional */
+        /* Itinerario */
         .itinerary-list {
             display: flex;
             flex-direction: column;
@@ -176,11 +176,13 @@
             text-decoration: none;
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 6px;
             margin-top: 10px;
             box-shadow: 0 4px 15px rgba(29, 107, 164, 0.3);
         }
         .btn-camera { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        .btn-upload { background: linear-gradient(135deg, #1d6ba4, #00c6ff); }
 
         .glass-card {
             background: rgba(255, 255, 255, 0.5);
@@ -239,7 +241,7 @@
 
         .castle-image { width: 85%; max-width: 380px; filter: drop-shadow(0px 0px 10px rgba(29, 107, 164, 0.4)); margin-top: 15px; }
         
-        /* Dress Code - Movido un 10% a la izquierda */
+        /* Dress Code */
         .dress-code-img { 
             width: 720px; 
             max-width: 114%; 
@@ -340,7 +342,7 @@
             </div>
         </div>
 
-        <!-- 5. CALENDARIO + COUNTDOWN - Bajado un 10% adicional (total transform: translateY(-5%)) -->
+        <!-- 5. CALENDARIO + COUNTDOWN -->
         <div class="page-view standard-bg">
             <div class="anim-fade flex flex-col items-center" style="transform: translateY(-5%);">
                 <h2 class="section-title" style="font-size: 2.2rem; line-height: 1.1;">
@@ -490,24 +492,27 @@
             </div>
         </div>
 
-        <!-- 12. FOTOS -->
+        <!-- 12. FOTOS - Contenido subido un 10% -->
         <div class="page-view standard-bg">
-            <div class="anim-fade px-10">
+            <div class="anim-fade px-10 flex flex-col items-center" style="transform: translateY(-10%);">
                 <h2 class="section-title" style="font-size: 2.3rem;">Fotos</h2>
                 <div class="glass-card mx-auto flex flex-col items-center" style="padding: 15px;">
-                    <p class="text-[10px] mb-3 leading-snug">¡Ayúdame a guardar cada momento! Escanea el QR o usa el botón para compartir tus fotos.</p>
-                    <div class="qr-container" style="width: 140px; height: 140px;">
+                    <p class="text-[10px] mb-3 leading-snug">¡Ayúdame a guardar cada momento! Escanea el QR o usa los botones para compartir o ver las fotos.</p>
+                    <div class="qr-container" style="width: 130px; height: 130px;">
                         <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/WhatsApp%20Image%202026-04-02%20at%2010.19.04%20AM%20(1).jpeg" alt="[Código QR para fotos]" class="qr-img">
                     </div>
-                    <p class="text-[9px] uppercase tracking-widest font-bold my-2 opacity-60">— O —</p>
-                    <a href="https://disposable.app/album/41394/2e403d13c6e9c5dc79cd9595" target="_blank" class="btn-action btn-camera" style="margin-top: 0;">📤 Compartir Link</a>
+                    
+                    <div class="flex flex-col gap-2 w-full mt-2">
+                        <a href="https://disposable.app/camera/41394/9742a5b4bc" target="_blank" class="btn-action btn-upload" style="margin-top: 0; width: 100%;">📸 Subir Fotos</a>
+                        <a href="https://disposable.app/album/41394/2e403d13c6e9c5dc79cd9595" target="_blank" class="btn-action btn-camera" style="margin-top: 0; width: 100%;">🖼️ Ver Fotos</a>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- 13. AGRADECIMIENTO -->
+        <!-- 13. AGRADECIMIENTO - Bajado un 10% -->
         <div class="page-view standard-bg">
-            <div class="anim-fade px-8 flex flex-col items-center">
+            <div class="anim-fade px-8 flex flex-col items-center" style="margin-top: 10vh;">
                 <h2 class="section-title">¡Gracias!</h2>
                 <p class="text-[0.9rem] italic leading-[1.8] opacity-80 max-w-xs mx-auto">
                     "Gracias por ser parte de mi historia y por acompañarme en este sueño hecho realidad."
