@@ -102,10 +102,10 @@
         .section-title { font-family: 'Parisienne', cursive; font-size: 2.8rem; color: var(--darker-blue); margin-bottom: 20px; }
         .text-juntos { font-family: 'Parisienne', cursive; font-size: 2.5rem; }
         
-        /* Tipografía cursiva para nombres de padres y padrinos */
+        /* Tipografía cursiva para nombres de padres y padrinos - Reducido 5% de 1.8rem a 1.71rem */
         .names-display { 
             font-family: 'Great Vibes', cursive; 
-            font-size: 1.8rem; 
+            font-size: 1.71rem; 
             letter-spacing: 1px; 
             line-height: 1.2; 
             color: var(--darker-blue);
@@ -300,6 +300,12 @@
             letter-spacing: 2px;
             font-size: 0.7rem;
         }
+
+        /* Estilo para reducir la última página un 15% */
+        .thanks-page-reduced {
+            transform: scale(0.85);
+            transform-origin: center center;
+        }
     </style>
 </head>
 <body>
@@ -321,7 +327,6 @@
         <!-- 1. PORTADA -->
         <div id="view-invitation" class="page-view">
             <div class="absolute bottom-10 left-0 w-full text-center p-8 bg-white/30 backdrop-blur-md">
-                 <!-- Se aumentó el line-height un 4% para evitar que las letras se junten -->
                  <h2 class="font-['Great_Vibes'] text-6xl text-blue-900" style="line-height: 1.4;">Jimena Camila</h2>
                  <p class="text-sm tracking-[5px] text-blue-900 font-semibold mt-2">MIS 15 AÑOS</p>
                  <p class="text-[10px] mt-6 animate-bounce opacity-70">Desliza para ver más ↓</p>
@@ -405,11 +410,11 @@
             </div>
         </div>
 
-        <!-- 6. PÁGINA DE MISA -->
+        <!-- 6. PÁGINA DE MISA (Contenido reducido un 10%) -->
         <div class="page-view standard-bg">
-            <div class="anim-fade w-full px-8 flex flex-col items-center">
+            <div class="anim-fade w-full px-8 flex flex-col items-center" style="transform: scale(0.9);">
                 <h2 class="section-title" style="font-size: 2.3rem;">Ceremonia Religiosa</h2>
-                <div class="glass-card" style="transform: scale(0.95);">
+                <div class="glass-card">
                     <p class="font-bold text-[0.7rem] uppercase tracking-wider">Parroquia del Sagrado Corazón de Jesús</p>
                     <div class="h-px w-1/2 bg-blue-900/20 mx-auto my-2"></div>
                     <p class="text-md font-['Playfair_Display'] italic">3:00 PM</p>
@@ -420,11 +425,11 @@
             </div>
         </div>
 
-        <!-- 7. PÁGINA DE RECEPCIÓN -->
+        <!-- 7. PÁGINA DE RECEPCIÓN (Contenido aumentado) -->
         <div class="page-view standard-bg" style="min-height: 90vh;">
             <div class="anim-fade w-full px-8 flex flex-col items-center">
                 <h2 class="section-title" style="font-size: 2.3rem;">Recepción</h2>
-                <div class="glass-card" style="transform: scale(0.85);"> 
+                <div class="glass-card" style="transform: scale(1.05);"> <!-- Aumentado el tamaño del contenido -->
                     <p class="font-bold text-[0.735rem] uppercase tracking-wider">La Cañada</p> 
                     <div class="h-px w-1/2 bg-blue-900/20 mx-auto my-2"></div>
                     <p class="text-[1.05rem] font-['Playfair_Display'] italic">4:30 PM</p> 
@@ -542,7 +547,7 @@
 
         <!-- 13. AGRADECIMIENTO -->
         <div class="page-view standard-bg">
-            <div class="anim-fade px-8 flex flex-col items-center" style="margin-top: 22vh;">
+            <div class="anim-fade px-8 flex flex-col items-center thanks-page-reduced" style="margin-top: 22vh;">
                 <h2 class="section-title">¡Gracias!</h2>
                 <p class="text-[0.9rem] italic leading-[1.8] opacity-80 max-w-xs mx-auto">
                     "Gracias por ser parte de mi historia y por acompañarme en este sueño hecho realidad."
