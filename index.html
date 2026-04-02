@@ -181,8 +181,12 @@
             margin-top: 10px;
             box-shadow: 0 4px 15px rgba(29, 107, 164, 0.3);
         }
-        .btn-camera { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
-        .btn-upload { background: linear-gradient(135deg, #1d6ba4, #00c6ff); }
+        /* Botones azules para fotos */
+        .btn-photo-blue { 
+            background: var(--custom-blue); 
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .btn-photo-blue:active { background: var(--darker-blue); }
 
         .glass-card {
             background: rgba(255, 255, 255, 0.5);
@@ -272,6 +276,9 @@
             margin: 10px auto;
             filter: drop-shadow(0px 4px 8px rgba(29, 107, 164, 0.2));
         }
+
+        /* Nueva imagen decorativa */
+        .decorative-img { width: 140px; margin-top: 15px; filter: drop-shadow(0px 4px 8px rgba(29, 107, 164, 0.2)); }
     </style>
 </head>
 <body>
@@ -314,7 +321,7 @@
                 <p class="text-[0.8rem] leading-relaxed italic opacity-80 max-w-sm">
                     "La cuenta regresiva ha comenzado. Será una noche llena de brillo y encanto, y me encantaría que formaran parte de esta celebración especial en mi vida."
                 </p>
-                <img class="castle-image" src="https://raw.githubusercontent.com/regina15033/xv-camila/main/1477b8bed4713558ef720f2969e31159-Photoroom.png" alt="[Carruaje de cristal]">
+                <img class="castle-image" src="https://raw.githubusercontent.com/regina15033/xv-camila/main/1477b8bed4713558ef720f2969e31159-Photoroom.png" alt="[Imagen de Carruaje de cristal]">
             </div>
         </div>
 
@@ -325,7 +332,7 @@
                 <div class="mx-auto mb-4">
                     <p class="names-display">Adriana Ruiz Cabrera <br> <span class="text-xs opacity-50">&</span> <br> Miguel Angel Olvera</p>
                 </div>
-                <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/297cda702ffcaae7b211cd8a189365c9-Photoroom.png" alt="[Divisor decorativo]" class="separator-img">
+                <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/297cda702ffcaae7b211cd8a189365c9-Photoroom.png" alt="[Imagen de Divisor decorativo]" class="separator-img">
                 <p class="text-[0.8rem] italic mt-4 px-6 opacity-70">"Gracias por darme la vida y por ser mi guía constante en este camino."</p>
             </div>
         </div>
@@ -337,7 +344,7 @@
                 <div class="mx-auto mb-6">
                     <p class="names-display">Lorena Ruiz Cabrera <br> <span class="text-xs opacity-50">&</span> <br> Jorge Beltrán Villegas</p>
                 </div>
-                <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/928916ca276e8cebf1980a03b5741d49-Photoroom.png" alt="[Decoración de padrinos]" class="godparents-img">
+                <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/928916ca276e8cebf1980a03b5741d49-Photoroom.png" alt="[Imagen de Decoración de padrinos]" class="godparents-img">
                 <p class="text-[0.8rem] italic mt-4 px-6 opacity-70">"Es un honor para mí que me acompañen en este día tan especial como mis padrinos."</p>
             </div>
         </div>
@@ -371,7 +378,7 @@
                     <div class="timer-circle"><span id="minutes" class="text-lg font-bold">00</span><span class="text-[6px] uppercase">Min</span></div>
                     <div class="timer-circle"><span id="seconds" class="text-lg font-bold">00</span><span class="text-[6px] uppercase">Seg</span></div>
                 </div>
-                <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/852d2b55ae504af05080eaa25d0f2a74-Photoroom.png" alt="[Decoración mágica]" class="countdown-bottom-img">
+                <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/852d2b55ae504af05080eaa25d0f2a74-Photoroom.png" alt="[Imagen de Decoración mágica]" class="countdown-bottom-img">
                 <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Mis+15+Años+-+Jimena+Camila&dates=20260502T210000Z/20260503T050000Z&location=Salón+La+Rinconada" target="_blank" class="btn-action">📅 Agendar Fecha</a>
             </div>
         </div>
@@ -384,7 +391,7 @@
                     <p class="font-bold text-[0.7rem] uppercase tracking-wider">Parroquia de Jesucristo Sumo y Eterno Sacerdote</p>
                     <div class="h-px w-1/2 bg-blue-900/20 mx-auto my-2"></div>
                     <p class="text-md font-['Playfair_Display'] italic">3:00 PM</p>
-                    <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/c813f26822b2b3c59dc5ef601c7101e3-Photoroom.png" alt="[Icono de iglesia]" class="location-img mx-auto" style="width: 100px;">
+                    <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/c813f26822b2b3c59dc5ef601c7101e3-Photoroom.png" alt="[Imagen de Icono de iglesia]" class="location-img mx-auto" style="width: 100px;">
                     <p class="text-[0.6rem] opacity-70 mb-2 px-3 italic">Av. de las Fuentes s/n, Lomas de San Juan, San Juan del Río, Qro.</p>
                     <a href="https://maps.app.goo.gl/B2kp9Qri1K5H3Lfb8" target="_blank" class="btn-action">Ver Ubicación</a>
                 </div>
@@ -395,13 +402,13 @@
         <div class="page-view standard-bg">
             <div class="anim-fade w-full px-8 flex flex-col items-center">
                 <h2 class="section-title" style="font-size: 2.3rem;">Recepción</h2>
-                <div class="glass-card" style="transform: scale(0.95);">
-                    <p class="font-bold text-[0.7rem] uppercase tracking-wider">Salón La Rinconada</p>
+                <div class="glass-card" style="transform: scale(0.85);"> 
+                    <p class="font-bold text-[0.735rem] uppercase tracking-wider">Salón La Rinconada</p> 
                     <div class="h-px w-1/2 bg-blue-900/20 mx-auto my-2"></div>
-                    <p class="text-md font-['Playfair_Display'] italic">4:30 PM</p>
-                    <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/f6ee851f6b1fc3383be6cbdc8122a0f1-Photoroom.png" alt="[Icono de recepción]" class="location-img mx-auto" style="width: 100px;">
-                    <p class="text-[0.6rem] opacity-70 mb-2 px-3 italic">Blvd. Hidalgo 124, Centro, San Juan del Río, Qro.</p>
-                    <a href="https://maps.app.goo.gl/bATheHfGzLrv78NP7" target="_blank" class="btn-action">Ver Ubicación</a>
+                    <p class="text-[1.05rem] font-['Playfair_Display'] italic">4:30 PM</p> 
+                    <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/f6ee851f6b1fc3383be6cbdc8122a0f1-Photoroom.png" alt="[Imagen de Icono de recepción]" class="location-img mx-auto" style="width: 90px;">
+                    <p class="text-[0.63rem] opacity-70 mb-2 px-3 italic">Blvd. Hidalgo 124, Centro, San Juan del Río, Qro.</p> 
+                    <a href="https://maps.app.goo.gl/bATheHfGzLrv78NP7" target="_blank" class="btn-action" style="font-size: 0.68rem;">Ver Ubicación</a> 
                 </div>
             </div>
         </div>
@@ -413,21 +420,21 @@
                 <div class="itinerary-list">
                     <div class="itinerary-item anim-fade">
                         <div class="itinerary-icon-container">
-                            <img src="https://img.icons8.com/ios-filled/100/1d6ba4/church.png" class="itinerary-icon-img" alt="[Icono de iglesia]">
+                            <img src="https://img.icons8.com/ios-filled/100/1d6ba4/church.png" class="itinerary-icon-img" alt="[Imagen de Icono de iglesia]">
                         </div>
                         <p class="font-bold text-[0.7rem] tracking-widest uppercase">Misa</p>
                         <p class="text-[0.6rem] opacity-70 italic">3:00 PM</p>
                     </div>
                     <div class="itinerary-item anim-fade">
                         <div class="itinerary-icon-container">
-                            <img src="https://img.icons8.com/ios-filled/100/1d6ba4/champagne-bottle.png" class="itinerary-icon-img" alt="[Icono de brindis]">
+                            <img src="https://img.icons8.com/ios-filled/100/1d6ba4/champagne-bottle.png" class="itinerary-icon-img" alt="[Imagen de Icono de brindis]">
                         </div>
                         <p class="font-bold text-[0.7rem] tracking-widest uppercase">Recepción</p>
                         <p class="text-[0.6rem] opacity-70 italic">4:30 PM</p>
                     </div>
                     <div class="itinerary-item anim-fade">
                         <div class="itinerary-icon-container">
-                            <img src="https://img.icons8.com/ios-filled/100/1d6ba4/dining-room.png" class="itinerary-icon-img" alt="[Icono de comida]">
+                            <img src="https://img.icons8.com/ios-filled/100/1d6ba4/dining-room.png" class="itinerary-icon-img" alt="[Imagen de Icono de comida]">
                         </div>
                         <p class="font-bold text-[0.7rem] tracking-widest uppercase">Comida</p>
                         <p class="text-[0.6rem] opacity-70 italic">5:00 PM</p>
@@ -447,16 +454,16 @@
         <div class="page-view standard-bg overflow-hidden">
             <div class="anim-fade px-4 w-full">
                 <h2 class="section-title">Dress Code</h2>
-                <p class="text-xs italic px-6 max-w-xs mx-auto text-blue-800 opacity-90 leading-relaxed font-semibold">
+                <p class="text-xs italic px-6 max-w-xs mx-auto text-blue-800 opacity-90 leading-relaxed font-semibold" style="margin-top: 15%;"> 
                     Te pedimos que evites el color azul en tu vestimenta, ya que este estará reservado para la quinceañera.
                 </p>
-                <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/f33e7a87dc7599a448a388b42b39c826-Photoroom.png" alt="[Guía de vestimenta]" class="dress-code-img">
+                <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/f33e7a87dc7599a448a388b42b39c826-Photoroom.png" alt="[Imagen de Guía de vestimenta]" class="dress-code-img">
             </div>
         </div>
 
-        <!-- 10. CONFIRMACIÓN -->
+        <!-- 10. CONFIRMACIÓN - Movida 2% a la derecha -->
         <div class="page-view standard-bg">
-            <div class="anim-fade w-full px-6 flex flex-col items-center">
+            <div class="anim-fade w-full px-6 flex flex-col items-center" style="margin-left: 2%;">
                 <h2 class="section-title">Confirmación</h2>
                 <p class="font-['Parisienne'] text-xl text-blue-900 mb-4 px-6 leading-tight">
                     Tu presencia es el mejor regalo que me podrías dar, por favor confírmame tu asistencia para reservar tu lugar.
@@ -470,9 +477,9 @@
             </div>
         </div>
 
-        <!-- 11. REGALOS -->
-        <div class="page-view standard-bg" style="min-height: 60vh; padding-bottom: 20px;">
-            <div class="anim-fade px-8">
+        <!-- 11. REGALOS - Subido un 5% y con nueva imagen -->
+        <div class="page-view standard-bg" style="min-height: 60vh; padding-bottom: 20px; margin-top: -5vh;">
+            <div class="anim-fade px-8 flex flex-col items-center">
                 <h2 class="section-title" style="font-size: 2.2rem; margin-bottom: 10px;">Regalos</h2>
                 <p class="text-[11px] italic max-w-xs mx-auto text-blue-800 opacity-90 mb-4 leading-normal">"Si deseas tener un detalle conmigo, puedes elegir el obsequio que desees o apoyarme mediante una lluvia de sobres."</p>
                 <div class="flex justify-center gap-10 items-center">
@@ -489,28 +496,30 @@
                         <span class="text-[9px] font-bold tracking-widest">DETALLE</span>
                     </div>
                 </div>
+                <!-- Imagen decorativa agregada -->
+                <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/a1c7ed507b28e2e3678f9ae8fdccf21c-Photoroom%20(1).png" alt="[Imagen de Decoración de regalos]" class="decorative-img">
             </div>
         </div>
 
-        <!-- 12. FOTOS - Contenido subido un 10% -->
+        <!-- 12. FOTOS -->
         <div class="page-view standard-bg">
             <div class="anim-fade px-10 flex flex-col items-center" style="transform: translateY(-10%);">
                 <h2 class="section-title" style="font-size: 2.3rem;">Fotos</h2>
                 <div class="glass-card mx-auto flex flex-col items-center" style="padding: 15px;">
                     <p class="text-[10px] mb-3 leading-snug">¡Ayúdame a guardar cada momento! Escanea el QR o usa los botones para compartir o ver las fotos.</p>
                     <div class="qr-container" style="width: 130px; height: 130px;">
-                        <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/WhatsApp%20Image%202026-04-02%20at%2010.19.04%20AM%20(1).jpeg" alt="[Código QR para fotos]" class="qr-img">
+                        <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/WhatsApp%20Image%202026-04-02%20at%2010.19.04%20AM%20(1).jpeg" alt="[Imagen de Código QR para fotos]" class="qr-img">
                     </div>
                     
                     <div class="flex flex-col gap-2 w-full mt-2">
-                        <a href="https://disposable.app/camera/41394/9742a5b4bc" target="_blank" class="btn-action btn-upload" style="margin-top: 0; width: 100%;">📸 Subir Fotos</a>
-                        <a href="https://disposable.app/album/41394/2e403d13c6e9c5dc79cd9595" target="_blank" class="btn-action btn-camera" style="margin-top: 0; width: 100%;">🖼️ Ver Fotos</a>
+                        <a href="https://disposable.app/camera/41394/9742a5b4bc" target="_blank" class="btn-action btn-photo-blue" style="margin-top: 0; width: 100%;">📸 Subir Fotos</a>
+                        <a href="https://disposable.app/album/41394/2e403d13c6e9c5dc79cd9595" target="_blank" class="btn-action btn-photo-blue" style="margin-top: 0; width: 100%;">🖼️ Ver Fotos</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- 13. AGRADECIMIENTO - Bajado un 10% -->
+        <!-- 13. AGRADECIMIENTO -->
         <div class="page-view standard-bg">
             <div class="anim-fade px-8 flex flex-col items-center" style="margin-top: 10vh;">
                 <h2 class="section-title">¡Gracias!</h2>
@@ -518,7 +527,7 @@
                     "Gracias por ser parte de mi historia y por acompañarme en este sueño hecho realidad."
                 </p>
                 <h3 class="font-['Great_Vibes'] text-5xl text-blue-900 mt-16" style="line-height: 1.33;">Jimena Camila</h3>
-                <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/df8e56933f3bf2fe6e5190fe68086a79-Photoroom.png" alt="[Decoración final]" class="thanks-img">
+                <img src="https://raw.githubusercontent.com/regina15033/xv-camila/main/df8e56933f3bf2fe6e5190fe68086a79-Photoroom.png" alt="[Imagen de Decoración final]" class="thanks-img">
             </div>
         </div>
 
