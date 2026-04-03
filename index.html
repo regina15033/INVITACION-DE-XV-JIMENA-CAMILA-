@@ -325,7 +325,8 @@
 <body>
 
     <audio id="bg-music" loop>
-        <source src="https://raw.githubusercontent.com/regina15033/xv-camila/main/Coldplay%20-%20A%20Sky%20Full%20of%20Stars%20Traducida%20al%20Espa%C3%B1ol_%5Bcut_236sec%5D.mp3" type="audio/mpeg">
+        <!-- Canción actualizada a Viva La Vida (usando la URL raw para reproducción directa) -->
+        <source src="https://raw.githubusercontent.com/regina15033/xv-camila/main/Viva%20La%20Vida.mp3" type="audio/mpeg">
     </audio>
 
     <div id="view-envelope">
@@ -586,7 +587,8 @@
                 setTimeout(() => {
                     viewEnvelope.style.visibility = 'hidden';
                     scrollContainer.style.display = 'block';
-                    audio.play().catch(() => {});
+                    // El audio se reproduce después de la interacción del usuario
+                    audio.play().catch(e => console.log("Audio play error:", e));
                 }, 800);
             }, 1000);
         });
